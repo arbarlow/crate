@@ -14,6 +14,7 @@
 		FA2F8192191E80C800C308F2 /* ConnectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2F8190191E80C800C308F2 /* ConnectionViewController.xib */; };
 		FAA3C42C191FC26C00B31C34 /* PostgreSQLAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA3C42B191FC26C00B31C34 /* PostgreSQLAdapter.m */; };
 		FAA3C42E191FD19200B31C34 /* libpq.5.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA3C42D191FD19200B31C34 /* libpq.5.6.dylib */; };
+		FAA3C43B192022E800B31C34 /* NSManagedObject+Dictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA3C43A192022E800B31C34 /* NSManagedObject+Dictionary.m */; };
 		FAC2F76C19197F8500E3AB81 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC2F76B19197F8500E3AB81 /* Cocoa.framework */; };
 		FAC2F77619197F8500E3AB81 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAC2F77419197F8500E3AB81 /* InfoPlist.strings */; };
 		FAC2F77819197F8500E3AB81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC2F77719197F8500E3AB81 /* main.m */; };
@@ -56,6 +57,8 @@
 		FAA3C42A191FC26C00B31C34 /* PostgreSQLAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostgreSQLAdapter.h; path = Classes/PostgreSQLAdapter.h; sourceTree = "<group>"; };
 		FAA3C42B191FC26C00B31C34 /* PostgreSQLAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostgreSQLAdapter.m; path = Classes/PostgreSQLAdapter.m; sourceTree = "<group>"; };
 		FAA3C42D191FD19200B31C34 /* libpq.5.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpq.5.6.dylib; path = ../../../../usr/local/Cellar/postgresql/9.3.2/lib/libpq.5.6.dylib; sourceTree = "<group>"; };
+		FAA3C439192022E800B31C34 /* NSManagedObject+Dictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+Dictionary.h"; path = "Classes/NSManagedObject+Dictionary.h"; sourceTree = "<group>"; };
+		FAA3C43A192022E800B31C34 /* NSManagedObject+Dictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+Dictionary.m"; path = "Classes/NSManagedObject+Dictionary.m"; sourceTree = "<group>"; };
 		FAC2F76819197F8500E3AB81 /* Crate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC2F76B19197F8500E3AB81 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		FAC2F76E19197F8500E3AB81 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -112,6 +115,8 @@
 			children = (
 				FA2F818A191E6D5800C308F2 /* Favourite.h */,
 				FA2F818B191E6D5800C308F2 /* Favourite.m */,
+				FAA3C439192022E800B31C34 /* NSManagedObject+Dictionary.h */,
+				FAA3C43A192022E800B31C34 /* NSManagedObject+Dictionary.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -379,6 +384,7 @@
 				FAC2F77F19197F8600E3AB81 /* AppDelegate.m in Sources */,
 				FA2F8189191E65AD00C308F2 /* ColouredView.m in Sources */,
 				FAFEB67E19198D6C00E9FDB3 /* ConnectViewController.m in Sources */,
+				FAA3C43B192022E800B31C34 /* NSManagedObject+Dictionary.m in Sources */,
 				FAC2F7A9191985A700E3AB81 /* CrateWindowController.m in Sources */,
 				FA2F8191191E80C800C308F2 /* ConnectionViewController.m in Sources */,
 				FAC2F77819197F8500E3AB81 /* main.m in Sources */,

@@ -10,4 +10,6 @@
 
 @interface ConnectionViewController : NSViewController
 
+@property (nonatomic, strong) id <DBConnection> dbConnection;
+
 @end

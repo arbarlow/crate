@@ -15,6 +15,32 @@
     PGconn *conn;
 }
 
++ (NSString *)connectionStringFromDictionary:(NSDictionary*)dict
+{
+    NSMutableString *connectionString = [NSMutableString stringWithString:@""];
+    if (dict[@"host"] != [NSNull null]) {
+        [connectionString appendFormat:@"host='%@' ", dict[@"host"]];
+    }
+    
+    if (dict[@"port"] != [NSNull null]) {
+        [connectionString appendFormat:@"port='%@' ", dict[@"port"]];
+    }
+    
+    if (dict[@"user"] != [NSNull null]) {
+        [connectionString appendFormat:@"user='%@' ", dict[@"user"]];
+    }
+    
+    if (dict[@"password"] != [NSNull null]) {
+        [connectionString appendFormat:@"password='%@' ", dict[@"password"]];
+    }
+    
+    if (dict[@"database_name"] != [NSNull null]) {
+        [connectionString appendFormat:@"dbname='%@' ", dict[@"database_name"]];
+    }
+    
+    return [connectionString copy];
+}
+
 - (void)connectWithConnectionString:(NSString *)connectionString
                       dispatchQueue:(dispatch_queue_t)dispatchQueue
                             success:(void (^)(id <DBConnection> connection))success

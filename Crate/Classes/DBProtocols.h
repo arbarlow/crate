@@ -14,9 +14,8 @@
 
 @protocol DBConnection <NSObject>
 
-@property (readonly) id <DBDatabase> database;
-
 + (NSString *)name;
++ (NSString *)connectionStringFromDictionary:(NSDictionary*)dict;
 - (void)connectWithConnectionString:(NSString *)url
                       dispatchQueue:(dispatch_queue_t)dispatchQueue
                             success:(void (^)(id <DBConnection> connection))success

@@ -12,9 +12,6 @@
 
 @interface CrateWindowController : NSWindowController <NSWindowDelegate>
 
-@property (nonatomic, strong) ConnectViewController *connectController;
-@property (nonatomic, strong) ConnectionViewController *connectionController;
-
--(void)connectWithFavourite:(Favourite*)favourite;
+-(void)connectWithDictionary:(NSDictionary*)dict;
 
 @end

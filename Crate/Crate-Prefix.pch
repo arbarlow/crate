@@ -8,6 +8,7 @@
     #import <Cocoa/Cocoa.h>
     #import <MagicalRecord.h>
     #import <CoreData+MagicalRecord.h>
+    #import "NSManagedObject+Dictionary.h"
     #import "Favourite.h"
     #import "DBProtocols.h"
 #endif

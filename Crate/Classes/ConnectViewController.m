@@ -56,7 +56,7 @@
 {
     if ([sender clickedRow] != -1) {
         Favourite *fav = [[self favourites] objectAtIndex:[sender clickedRow]];
-        [_delegate connectWithFavourite:fav];
+        [_delegate connectWithDictionary:[fav asDictionary]];
     }
 }
          

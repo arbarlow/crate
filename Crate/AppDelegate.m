@@ -55,6 +55,7 @@ static NSString *storeName = @"Crate.sqlite";
             Favourite *defaultFav = [Favourite MR_createInContext:localContext];
             defaultFav.name = @"Localhost";
             defaultFav.host = @"localhost";
+            defaultFav.database_name = @"postgres";
         }];
     }
 }
