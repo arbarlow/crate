@@ -6,4 +6,11 @@
 
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
+    #import <MagicalRecord.h>
+    #import <CoreData+MagicalRecord.h>
+    #import "Favourite.h"
+    #import "DBProtocols.h"
 #endif
+
+#define NSColorFromRGB(r,g,b,a) [NSColor colorWithCalibratedRed:(float)r/255 green:(float)g/255 blue:(float)b/255 alpha:(float)a]
+#define NSStringFromChar(charStr) [NSString stringWithFormat:@"%s" , charStr]
