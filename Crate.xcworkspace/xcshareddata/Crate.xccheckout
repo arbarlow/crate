@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>6F6295FC-C50E-49AF-810A-4195C68F2C6E</string>
+	<string>F20BF2CE-1358-4B78-8D0A-67306C40FE8D</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Crate</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>63CAB45D-85AD-4030-83A1-E62A8620B4B7</key>
+		<key>B733EC23-6AB1-448A-8697-EABC56CD68B5</key>
 		<string>ssh://github.com/arbarlow/crate.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Crate.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>63CAB45D-85AD-4030-83A1-E62A8620B4B7</key>
+		<key>B733EC23-6AB1-448A-8697-EABC56CD68B5</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>63CAB45D-85AD-4030-83A1-E62A8620B4B7</string>
+	<string>B733EC23-6AB1-448A-8697-EABC56CD68B5</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>63CAB45D-85AD-4030-83A1-E62A8620B4B7</string>
+			<string>B733EC23-6AB1-448A-8697-EABC56CD68B5</string>
 			<key>IDESourceControlWCCName</key>
 			<string>crate</string>
 		</dict>

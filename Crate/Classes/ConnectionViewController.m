@@ -18,8 +18,24 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        _tables = [NSMutableArray array];
     }
     return self;
 }
 
+-(void)displayTables
+{
+    [_dbConnection tablesForDatabaseWithSuccess:^(NSArray *tables) {
+        NSMutableArray *mutableTables = [self mutableArrayValueForKey:@"tables"];
+        [mutableTables removeAllObjects];
+        [mutableTables addObjectsFromArray:tables];
+    } failure:^(NSString *error) {
+        NSLog(@"error");
+    }];
+}
+
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification
+{
+    NSLog(@"hello %@", aNotification.object);
+}
 @end

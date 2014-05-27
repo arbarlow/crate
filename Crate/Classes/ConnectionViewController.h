@@ -8,8 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ConnectionViewController : NSViewController
+@interface ConnectionViewController : NSViewController <NSTableViewDelegate>
 
 @property (nonatomic, strong) id <DBConnection> dbConnection;
+@property (weak) IBOutlet NSTableView *tablesTableView;
+@property (nonatomic, strong) NSMutableArray *tables;
+
+-(void)displayTables;
 
 @end

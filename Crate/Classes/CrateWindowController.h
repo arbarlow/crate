@@ -12,6 +12,11 @@
 
 @interface CrateWindowController : NSWindowController <NSWindowDelegate>
 
+@property (weak) IBOutlet NSView *titleView;
+@property (weak) IBOutlet NSProgressIndicator *progress;
+@property (weak) IBOutlet NSPopUpButtonCell *databaseSelectButton;
+@property (weak) IBOutlet NSSegmentedControl *viewSelector;
+
 -(void)connectWithDictionary:(NSDictionary*)dict;
 
 @end

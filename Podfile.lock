@@ -1,12 +1,18 @@
 PODS:
+  - INAppStoreWindow (1.4)
   - MagicalRecord (2.2):
     - MagicalRecord/Core
   - MagicalRecord/Core (2.2)
+  - XCTAsyncTestCase (0.1.0)
 
 DEPENDENCIES:
+  - INAppStoreWindow
   - MagicalRecord
+  - XCTAsyncTestCase
 
 SPEC CHECKSUMS:
+  INAppStoreWindow: 570e4a9768aaac643ef2129d9b018aca2e0157b3
   MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
+  XCTAsyncTestCase: 05c35ff59afc379911544e7452d48af186c9c5a2
 
 COCOAPODS: 0.33.1
