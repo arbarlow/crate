@@ -9,36 +9,34 @@
 #import <Foundation/Foundation.h>
 
 @protocol DBConnection;
-@protocol DBDatabase;
 @protocol DBResultSet;
 
 @protocol DBConnection <NSObject>
 
 + (NSString *)name;
-+ (NSString *)connectionStringFromDictionary:(NSDictionary*)dict;
-- (void)connectWithConnectionString:(NSString *)url
-                      dispatchQueue:(dispatch_queue_t)dispatchQueue
-                            success:(void (^)(id <DBConnection> connection))success
-                            failure:(void (^)(NSString *error))failure;
 - (void)close;
 - (BOOL)isOpen;
 - (NSString *)description;
+
+- (void)connectWithDictionary:(NSDictionary *)connectionDict
+                dispatchQueue:(dispatch_queue_t)dispatchQueue
+                      success:(void (^)(id <DBConnection> connection))success
+                      failure:(void (^)(NSString *error))failure;
+
+- (void)selectDatabase:(NSString*)database
+               success:(void (^)(id <DBConnection> connection))success
+               failure:(void (^)(NSString *error))failure;
+
 - (void)execQuery:(NSString *)query
           success:(void (^)(id <DBResultSet> resultSet, NSTimeInterval elapsedTime))success
           failure:(void (^)(NSString *error))failure;
-- (void)availableDatabasesWithSuccess:(void (^)(NSArray *databases))success
+
+- (void)availableDatabasesWithSuccess:(void (^)(NSArray *databases, NSString *currentDatabase))success
                               failure:(void (^)(NSString *error))failure;
 
-@end
+- (void)tablesForDatabaseWithSuccess:(void (^)(NSArray *tables))success
+                              failure:(void (^)(NSString *error))failure;
 
-#pragma mark -
-
-@protocol DBDatabase <NSObject>
-
-@property (readonly) id <DBConnection> connection;
-@property (readonly) NSString *name;
-
-- (NSArray*)tables;
 
 @end
 

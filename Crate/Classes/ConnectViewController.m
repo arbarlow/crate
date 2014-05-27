@@ -15,6 +15,8 @@
 
 @property (weak) IBOutlet NSTableView *tableView;
 @property (nonatomic, strong) NSArray *favs;
+@property (weak) IBOutlet NSTextFieldCell *errorField;
+
 @end
 
 @implementation ConnectViewController
@@ -67,6 +69,11 @@
     }
     
     return _favs;
+}
+
+-(void)displayError:(NSString*)error
+{
+    [_errorField setStringValue:error];
 }
 
 @end

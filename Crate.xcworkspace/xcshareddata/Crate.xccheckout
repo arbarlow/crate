@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CD4216CB-163E-49E2-87F1-15B43F741FEE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Crate</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6F0157B2-6D8F-4984-9D96-2B3D188CD236</key>
+		<string>ssh://github.com/arbarlow/crate.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Crate.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6F0157B2-6D8F-4984-9D96-2B3D188CD236</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/arbarlow/crate.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6F0157B2-6D8F-4984-9D96-2B3D188CD236</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6F0157B2-6D8F-4984-9D96-2B3D188CD236</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Crate</string>
+		</dict>
+	</array>
+</dict>
+</plist>

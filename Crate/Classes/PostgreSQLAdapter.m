@@ -8,37 +8,34 @@
 
 #import "PostgreSQLAdapter.h"
 
+#define DATABASES_QUERY @"SELECT datname FROM pg_database WHERE datistemplate = false ORDER BY datname ASC"
+#define TABLES_QUERY @"\
+SELECT table_name \
+FROM information_schema.tables \
+WHERE table_type = 'BASE TABLE' \
+AND table_schema = 'public' \
+ORDER BY table_type, table_name"
+
 @implementation PostgreSQLAdapter
 {
-    NSString *connectionURL;
+    NSDictionary *connectionDict;
     dispatch_queue_t dbQueue;
     PGconn *conn;
 }
 
-+ (NSString *)connectionStringFromDictionary:(NSDictionary*)dict
+- (void)connectWithDictionary:(NSDictionary *)connectionDictionary
+                dispatchQueue:(dispatch_queue_t)dispatchQueue
+                      success:(void (^)(id <DBConnection> connection))success
+                      failure:(void (^)(NSString *error))failure
 {
-    NSMutableString *connectionString = [NSMutableString stringWithString:@""];
-    if (dict[@"host"] != [NSNull null]) {
-        [connectionString appendFormat:@"host='%@' ", dict[@"host"]];
-    }
+    connectionDict = connectionDictionary;
+    dbQueue = dispatchQueue;
     
-    if (dict[@"port"] != [NSNull null]) {
-        [connectionString appendFormat:@"port='%@' ", dict[@"port"]];
-    }
+    [self connectWithConnectionString:[self connectionStringFromDictionary:connectionDict]
+                        dispatchQueue:dispatchQueue
+                              success:success
+                              failure:failure];
     
-    if (dict[@"user"] != [NSNull null]) {
-        [connectionString appendFormat:@"user='%@' ", dict[@"user"]];
-    }
-    
-    if (dict[@"password"] != [NSNull null]) {
-        [connectionString appendFormat:@"password='%@' ", dict[@"password"]];
-    }
-    
-    if (dict[@"database_name"] != [NSNull null]) {
-        [connectionString appendFormat:@"dbname='%@' ", dict[@"database_name"]];
-    }
-    
-    return [connectionString copy];
 }
 
 - (void)connectWithConnectionString:(NSString *)connectionString
@@ -46,11 +43,8 @@
                             success:(void (^)(id <DBConnection> connection))success
                             failure:(void (^)(NSString *error))failure
 {
-    connectionURL = connectionString;
-    dbQueue = dispatchQueue;
-    
     dispatch_async(dispatchQueue, ^{
-        conn = PQconnectdb([connectionURL UTF8String]);
+        conn = PQconnectdb([connectionString UTF8String]);
         if (PQstatus(conn) == CONNECTION_OK) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 success(self);
@@ -63,16 +57,34 @@
     });
 }
 
+- (void)selectDatabase:(NSString*)database
+               success:(void (^)(id <DBConnection> connection))success
+               failure:(void (^)(NSString *error))failure
+{
+    [self close];
+    NSMutableDictionary *mutableConnection = [connectionDict mutableCopy];
+    [mutableConnection setObject:database forKey:@"database_name"];
+    
+    [self connectWithDictionary:mutableConnection
+                  dispatchQueue:dbQueue
+                        success:success
+                        failure:failure];
+}
+
 - (void)execQuery:(NSString *)query
           success:(void (^)(id <DBResultSet> resultSet, NSTimeInterval elapsedTime))success
           failure:(void (^)(NSString *error))failure
 {
+    // Terminate SQL so errors are raised with bas SQL
+    query = [query stringByAppendingString:@";"];
+    
+    // Exec the query
     dispatch_async(dbQueue, ^{
         CFAbsoluteTime startTime = CFAbsoluteTimeGetCurrent();
         PGresult *res = PQexec(conn, [query UTF8String]);
         CFAbsoluteTime endTime = CFAbsoluteTimeGetCurrent();
         
-        if (PQresultStatus(res) != PGRES_BAD_RESPONSE || PQresultStatus(res) != PGRES_FATAL_ERROR) {
+        if (PQresultStatus(res) == PGRES_COMMAND_OK || PQresultStatus(res) == PGRES_TUPLES_OK) {
             PostgreSQLResultSet *resultSet = [[PostgreSQLResultSet alloc] initWithResult:res];
             dispatch_async(dispatch_get_main_queue(), ^{
                 success(resultSet, endTime - startTime);
@@ -85,16 +97,67 @@
     });
 }
 
--(void)availableDatabasesWithSuccess:(void (^)(NSArray *databases))success
+-(void)availableDatabasesWithSuccess:(void (^)(NSArray *databases, NSString *currentDatabase))success
                              failure:(void (^)(NSString *))failure
 {
-    [self execQuery:@"SELECT datname FROM pg_database WHERE datistemplate = false"
+    [self execQuery:DATABASES_QUERY
             success:^(id<DBResultSet> resultSet, NSTimeInterval elapsedTime) {
-                success([resultSet allResults]);
+                NSMutableArray *dbs = [[resultSet allResults] mutableCopy];
+                if ([dbs count] > 0) {
+                    [dbs removeObjectAtIndex:0];
+                }
+                
+                [self execQuery:@"SELECT current_database()"
+                        success:^(id<DBResultSet> resultSet, NSTimeInterval elapsedTime) {
+                            success(dbs, [[resultSet allResults] lastObject]);
+                        }
+                        failure:^(NSString *error) {
+                            failure(error);
+                        }];
             }
             failure:^(NSString *error) {
                 failure(error);
             }];
+}
+
+- (void)tablesForDatabaseWithSuccess:(void (^)(NSArray *tables))success
+                              failure:(void (^)(NSString *error))failure
+{
+    [self execQuery:TABLES_QUERY success:^(id<DBResultSet> resultSet, NSTimeInterval elapsedTime) {
+        NSMutableArray *dbs = [[resultSet allResults] mutableCopy];
+        if ([dbs count] > 0) {
+            [dbs removeObjectAtIndex:0];
+        }
+        success(dbs);
+    } failure:^(NSString *error) {
+        failure(error);
+    }];
+}
+
+- (NSString *)connectionStringFromDictionary:(NSDictionary*)dict
+{
+    NSMutableString *connectionString = [NSMutableString stringWithString:@""];
+    if (!NullOrNil(dict[@"host"])) {
+        [connectionString appendFormat:@"host='%@' ", dict[@"host"]];
+    }
+    
+    if (!NullOrNil(dict[@"port"])) {
+        [connectionString appendFormat:@"port='%@' ", dict[@"port"]];
+    }
+    
+    if (!NullOrNil(dict[@"user"])) {
+        [connectionString appendFormat:@"user='%@' ", dict[@"user"]];
+    }
+    
+    if (!NullOrNil(dict[@"password"])) {
+        [connectionString appendFormat:@"password='%@' ", dict[@"password"]];
+    }
+    
+    if (!NullOrNil(dict[@"database_name"])) {
+        [connectionString appendFormat:@"dbname='%@' ", dict[@"database_name"]];
+    }
+    
+    return [connectionString copy];
 }
 
 -(BOOL)isOpen
@@ -104,7 +167,9 @@
 
 -(void)close
 {
-    PQfinish(conn);
+    if (conn != nil) {
+        PQfinish(conn);
+    }
 }
 
 // TODO nicely
