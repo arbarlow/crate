@@ -51,7 +51,7 @@
                     </constraints>
                     <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xL4-yv-bFa">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="menu"/>
                         <menu key="menu" title="OtherViews" id="vLT-YX-bPO"/>
                     </popUpButtonCell>
                 </popUpButton>
@@ -66,6 +66,9 @@
                             <segment label="Query" width="60"/>
                         </segments>
                     </segmentedCell>
+                    <connections>
+                        <action selector="didSelectView:" target="-2" id="UDs-B6-i7e"/>
+                    </connections>
                 </segmentedControl>
             </subviews>
             <constraints>

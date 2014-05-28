@@ -7,13 +7,22 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SchemaViewController.h"
+#import "BasicDataViewController.h"
+#import "QueryViewController.h"
 
 @interface ConnectionViewController : NSViewController <NSTableViewDelegate>
 
 @property (nonatomic, strong) id <DBConnection> dbConnection;
-@property (weak) IBOutlet NSTableView *tablesTableView;
 @property (nonatomic, strong) NSMutableArray *tables;
+@property (weak) IBOutlet NSTableView *tablesTableView;
+@property (weak) IBOutlet NSView *rightHandView;
+
+@property (nonatomic, strong) SchemaViewController *schemaView;
+@property (nonatomic, strong) BasicDataViewController *basicDataView;
+@property (nonatomic, strong) QueryViewController *queryView;
 
 -(void)displayTables;
+-(void)didSwitchView:(NSInteger)viewSelected;
 
 @end

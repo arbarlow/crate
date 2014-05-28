@@ -45,7 +45,7 @@
     [aWindow.titleBarView addSubview:self.titleView];
     
     connectController    = [[ConnectViewController alloc] initWithNibName:@"ConnectViewController" bundle:nil];
-    connectionController = [[ConnectionViewController alloc] init];
+    connectionController = [[ConnectionViewController alloc] initWithNibName:@"ConnectionViewController" bundle:nil];
     connectController.delegate = self;
     self.window.contentView = connectController.view;
     
@@ -98,6 +98,10 @@
         
         [self.progress stopAnimation:nil];
     } failure:^(NSString *error) {}];
+}
+
+- (IBAction)didSelectView:(id)sender {
+    [connectionController didSwitchView:[(NSSegmentedControl*)sender selectedSegment]];
 }
 
 -(void)didSelectDatabase:(id)sender
