@@ -48,6 +48,9 @@
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                <connections>
+                                                    <binding destination="3WD-MN-FtM" name="value" keyPath="arrangedObjects.name" id="LUN-jM-TXV"/>
+                                                </connections>
                                             </tableColumn>
                                         </tableColumns>
                                         <connections>
@@ -85,5 +88,14 @@
                 <real value="250"/>
             </holdingPriorities>
         </splitView>
+        <arrayController objectClassName="PostgreSQLTable" editable="NO" id="3WD-MN-FtM">
+            <declaredKeys>
+                <string>name</string>
+            </declaredKeys>
+            <connections>
+                <binding destination="-2" name="contentArray" keyPath="tables" id="0ew-Gh-lua"/>
+            </connections>
+        </arrayController>
+        <userDefaultsController representsSharedInstance="YES" id="Q6l-sg-9AZ"/>
     </objects>
 </document>

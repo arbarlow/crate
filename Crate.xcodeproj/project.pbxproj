@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		04CF5E7D374D4DC3875E8289 /* libPods-CrateTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC4315FDC724489B901F0A1A /* libPods-CrateTests.a */; };
 		18F498A2C09D4B7299B44E90 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3FE7438260420F80A7885E /* libPods.a */; };
+		FA1C5BEE1944D0D100701FB4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC2F78019197F8600E3AB81 /* MainMenu.xib */; };
 		FA2F8189191E65AD00C308F2 /* ColouredView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8188191E65AD00C308F2 /* ColouredView.m */; };
 		FA2F818C191E6D5800C308F2 /* Favourite.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2F818B191E6D5800C308F2 /* Favourite.m */; };
 		FA2F8191191E80C800C308F2 /* ConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2F818F191E80C800C308F2 /* ConnectionViewController.m */; };
@@ -385,6 +386,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1C5BEE1944D0D100701FB4 /* MainMenu.xib in Resources */,
 				FA755275193699F40068C776 /* ResultTableViewController.xib in Resources */,
 				FA755276193699F40068C776 /* SchemaViewController.xib in Resources */,
 				FAC2F77619197F8500E3AB81 /* InfoPlist.strings in Resources */,
@@ -565,7 +567,7 @@
 		FAC2F79A19197F8600E3AB81 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -594,16 +596,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx10.9;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
 		FAC2F79B19197F8600E3AB81 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -627,8 +630,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				SDKROOT = macosx10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				SDKROOT = macosx10.9;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
@@ -692,6 +696,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = /usr/local/Cellar/postgresql/9.3.4/include;
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -712,6 +717,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = /usr/local/Cellar/postgresql/9.3.4/include;
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;

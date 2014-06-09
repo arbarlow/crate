@@ -124,11 +124,18 @@ ORDER BY table_type, table_name"
                               failure:(void (^)(NSString *error))failure
 {
     [self execQuery:TABLES_QUERY success:^(id<DBResultSet> resultSet, NSTimeInterval elapsedTime) {
-        NSMutableArray *dbs = [[resultSet allResults] mutableCopy];
+        NSArray *dbs = [resultSet allResults];
+        NSMutableArray *dbObjects = [NSMutableArray array];
+        
         if ([dbs count] > 0) {
-            [dbs removeObjectAtIndex:0];
+            for (NSString *tableName in dbs) {
+                PostgreSQLTable *tableObject = [[PostgreSQLTable alloc] initWithName:tableName];
+                [dbObjects addObject:tableObject];
+            }
+            [dbObjects removeObjectAtIndex:0];
         }
-        success(dbs);
+        
+        success(dbObjects);
     } failure:^(NSString *error) {
         failure(error);
     }];
@@ -181,6 +188,24 @@ ORDER BY table_type, table_name"
 + (NSString *)name
 {
     return @"PostgreSQL";
+}
+
+@end
+
+@implementation PostgreSQLTable
+{
+    NSString *name;
+}
+
+-(id)initWithName:(NSString*)tableName
+{
+    name = tableName;
+    return self;
+}
+
+- (NSString *)name
+{
+    return name;
 }
 
 @end

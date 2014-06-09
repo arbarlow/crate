@@ -40,6 +40,10 @@
 
 @end
 
+@protocol DBTable <NSObject>
+-(NSString*)name;
+@end
+
 #pragma mark -
 
 @protocol DBResultSet <NSObject>

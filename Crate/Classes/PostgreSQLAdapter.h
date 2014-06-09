@@ -11,6 +11,10 @@
 
 @interface PostgreSQLAdapter   : NSObject <DBConnection> @end
 
+@interface PostgreSQLTable     : NSObject <DBTable>
+-(id)initWithName:(NSString*)tableName;
+@end
+
 @interface PostgreSQLResultSet : NSObject <DBResultSet>
 -(id)initWithResult:(PGresult*)result;
 @end
