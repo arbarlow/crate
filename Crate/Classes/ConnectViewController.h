@@ -14,6 +14,4 @@
 
 @property (nonatomic, strong) CrateWindowController *delegate;
 
--(void)displayError:(NSString*)error;
-
 @end

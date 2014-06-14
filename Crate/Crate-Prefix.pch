@@ -12,6 +12,7 @@
     #import "Favourite.h"
     #import "DBProtocols.h"
     #import "PostgreSQLAdapter.h"
+    #import "ErrorView.h"
 #endif
 
 #define NSColorFromRGB(r,g,b,a) [NSColor colorWithCalibratedRed:(float)r/255 green:(float)g/255 blue:(float)b/255 alpha:(float)a]

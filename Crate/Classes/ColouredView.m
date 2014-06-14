@@ -22,7 +22,7 @@
 - (void)drawRect:(NSRect)rect
 {
     [_bgColour set];
-    NSRectFill([self bounds]);
+    NSRectFill(rect);
 }
 
 @end

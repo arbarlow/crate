@@ -10,6 +10,7 @@
 #import "ConnectViewController.h"
 #import "ConnectionViewController.h"
 
+
 @interface CrateWindowController : NSWindowController <NSWindowDelegate>
 
 @property (weak) IBOutlet NSView *titleView;

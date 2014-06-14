@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment defaultVersion="1080" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ErrorView">
+            <connections>
+                <outlet property="header" destination="hmx-me-k10" id="8bU-3k-rJa"/>
+                <outlet property="subHeader" destination="6jd-LM-LIr" id="wP5-cy-y8W"/>
+                <outlet property="view" destination="c22-O7-iKe" id="UF6-dN-UXH"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <customView id="c22-O7-iKe" customClass="DarkBorederedView">
+            <rect key="frame" x="0.0" y="0.0" width="328" height="131"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Vls-Wf-gxV">
+                    <rect key="frame" x="13" y="77" width="42" height="42"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="cross" id="oi0-q6-ytk"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="hmx-me-k10">
+                    <rect key="frame" x="61" y="85" width="257" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Connection Error" id="4wQ-H3-W9x">
+                        <font key="font" size="20" name="HelveticaNeue-Light"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="6jd-LM-LIr">
+                    <rect key="frame" x="18" y="23" width="305" height="23"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="FATAL:  database &quot;postgresy&quot; does not exist" id="LVd-sg-NIp">
+                        <font key="font" size="16" name="HelveticaNeue-Light"/>
+                        <color key="textColor" red="0.94675611413043481" green="0.94675611413043481" blue="0.94675611413043481" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+        </customView>
+    </objects>
+    <resources>
+        <image name="cross" width="28" height="28"/>
+    </resources>
+</document>

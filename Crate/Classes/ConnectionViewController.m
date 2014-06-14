@@ -67,7 +67,9 @@
         [mutableTables removeAllObjects];
         [mutableTables addObjectsFromArray:tables];
     } failure:^(NSString *error) {
-        NSLog(@"error");
+        [ErrorView displayForView:self.view
+                            title:@"Connection Error"
+                          message:error];
     }];
 }
 

@@ -25,7 +25,6 @@
 {
     self = [super initWithWindow:window];
     if (self) {
-        
     }
     return self;
 }
@@ -67,7 +66,9 @@
                                     [_viewSelector setEnabled:YES];
                                     [connectionController displayTables];
                                 } failure:^(NSString *error) {
-                                    [connectController displayError:error];
+                                    [ErrorView displayForView:connectController.view
+                                                        title:@"Connection Error"
+                                                      message:error];
                                     [self.progress stopAnimation:nil];
                                 }];
 }
@@ -97,7 +98,11 @@
         [_databaseSelectButton setEnabled:YES];
         
         [self.progress stopAnimation:nil];
-    } failure:^(NSString *error) {}];
+    } failure:^(NSString *error) {
+        [ErrorView displayForView:connectController.view
+                            title:@"Database Selection Error"
+                          message:error];
+    }];
 }
 
 - (IBAction)didSelectView:(id)sender {
@@ -113,7 +118,9 @@
         [connectionController displayTables];
         [self.progress stopAnimation:nil];
     } failure:^(NSString *error) {
-        // Handle error
+        [ErrorView displayForView:connectController.view
+                            title:@"Database Selection Error"
+                          message:error];
         [self.progress stopAnimation:nil];
     }];
 }
