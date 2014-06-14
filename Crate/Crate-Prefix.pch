@@ -16,8 +16,9 @@
 #endif
 
 #define NSColorFromRGB(r,g,b,a) [NSColor colorWithCalibratedRed:(float)r/255 green:(float)g/255 blue:(float)b/255 alpha:(float)a]
-#define NSStringFromChar(charStr) [NSString stringWithFormat:@"%s" , charStr]
 #define NullOrNil(obj) ((obj == [NSNull null]) || (obj == nil))
+
+#define NSStringFromChar(charStr) [[NSString alloc] initWithData:[NSData dataWithBytes:charStr length:strlen(charStr)] encoding:NSUTF8StringEncoding]
 
 #define WINDOW (CrateWindowController*)self.view.window
 #define WINDOW_PROGRESS [WINDOW progress]

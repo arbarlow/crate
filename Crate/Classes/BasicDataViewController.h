@@ -7,7 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ResultsViewController.h"
 
 @interface BasicDataViewController : NSViewController
+
+@property (nonatomic, strong) ResultsViewController *resultsController;
+
+-(void)displayResults:(id <DBResultSet>)results;
 
 @end

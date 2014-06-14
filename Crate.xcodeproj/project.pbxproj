@@ -15,7 +15,6 @@
 		FA2F8191191E80C800C308F2 /* ConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2F818F191E80C800C308F2 /* ConnectionViewController.m */; };
 		FA4DB863192BA65000F76981 /* PostgreSQLAdapterTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA4DB862192BA65000F76981 /* PostgreSQLAdapterTests.mm */; };
 		FA67B2DC1946605B005F7893 /* ErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA67B2DA1946605B005F7893 /* ErrorView.m */; };
-		FA75524E193688790068C776 /* ResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75524C193688790068C776 /* ResultTableViewController.m */; };
 		FA75525C193691700068C776 /* SchemaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75525A193691700068C776 /* SchemaViewController.m */; };
 		FA755261193697BD0068C776 /* BasicDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75525F193697BD0068C776 /* BasicDataViewController.m */; };
 		FA755267193699AD0068C776 /* QueryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA755265193699AD0068C776 /* QueryViewController.m */; };
@@ -24,7 +23,6 @@
 		FA755272193699F40068C776 /* ConnectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA75526B193699F40068C776 /* ConnectViewController.xib */; };
 		FA755273193699F40068C776 /* CrateWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA75526C193699F40068C776 /* CrateWindowController.xib */; };
 		FA755274193699F40068C776 /* QueryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA75526D193699F40068C776 /* QueryViewController.xib */; };
-		FA755275193699F40068C776 /* ResultTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA75526E193699F40068C776 /* ResultTableViewController.xib */; };
 		FA755276193699F40068C776 /* SchemaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA75526F193699F40068C776 /* SchemaViewController.xib */; };
 		FAA3C42C191FC26C00B31C34 /* PostgreSQLAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA3C42B191FC26C00B31C34 /* PostgreSQLAdapter.m */; };
 		FAA3C42E191FD19200B31C34 /* libpq.5.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA3C42D191FD19200B31C34 /* libpq.5.6.dylib */; };
@@ -44,6 +42,8 @@
 		FAC2F7A9191985A700E3AB81 /* CrateWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC2F7A7191985A700E3AB81 /* CrateWindowController.m */; };
 		FAC7D978194C9B82003630A0 /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC7D977194C9B82003630A0 /* ErrorView.xib */; };
 		FAC7D97B194C9E0B003630A0 /* DarkBorederedView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC7D97A194C9E0B003630A0 /* DarkBorederedView.m */; };
+		FAC7D983194CAD4D003630A0 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC7D981194CAD4D003630A0 /* ResultsViewController.m */; };
+		FAC7D984194CAD4D003630A0 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC7D982194CAD4D003630A0 /* ResultsViewController.xib */; };
 		FAFEB67E19198D6C00E9FDB3 /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFEB67C19198D6C00E9FDB3 /* ConnectViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -72,8 +72,6 @@
 		FA4DB862192BA65000F76981 /* PostgreSQLAdapterTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PostgreSQLAdapterTests.mm; sourceTree = "<group>"; };
 		FA67B2D91946605B005F7893 /* ErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ErrorView.h; path = Classes/ErrorView.h; sourceTree = "<group>"; };
 		FA67B2DA1946605B005F7893 /* ErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ErrorView.m; path = Classes/ErrorView.m; sourceTree = "<group>"; };
-		FA75524B193688790068C776 /* ResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultTableViewController.h; path = Classes/ResultTableViewController.h; sourceTree = "<group>"; };
-		FA75524C193688790068C776 /* ResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultTableViewController.m; path = Classes/ResultTableViewController.m; sourceTree = "<group>"; };
 		FA755259193691700068C776 /* SchemaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SchemaViewController.h; path = Classes/SchemaViewController.h; sourceTree = "<group>"; };
 		FA75525A193691700068C776 /* SchemaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SchemaViewController.m; path = Classes/SchemaViewController.m; sourceTree = "<group>"; };
 		FA75525E193697BD0068C776 /* BasicDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicDataViewController.h; path = Classes/BasicDataViewController.h; sourceTree = "<group>"; };
@@ -85,7 +83,6 @@
 		FA75526B193699F40068C776 /* ConnectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ConnectViewController.xib; path = Views/ConnectViewController.xib; sourceTree = "<group>"; };
 		FA75526C193699F40068C776 /* CrateWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CrateWindowController.xib; path = Views/CrateWindowController.xib; sourceTree = "<group>"; };
 		FA75526D193699F40068C776 /* QueryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QueryViewController.xib; path = Views/QueryViewController.xib; sourceTree = "<group>"; };
-		FA75526E193699F40068C776 /* ResultTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultTableViewController.xib; path = Views/ResultTableViewController.xib; sourceTree = "<group>"; };
 		FA75526F193699F40068C776 /* SchemaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SchemaViewController.xib; path = Views/SchemaViewController.xib; sourceTree = "<group>"; };
 		FAA3C42A191FC26C00B31C34 /* PostgreSQLAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostgreSQLAdapter.h; path = Classes/PostgreSQLAdapter.h; sourceTree = "<group>"; };
 		FAA3C42B191FC26C00B31C34 /* PostgreSQLAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostgreSQLAdapter.m; path = Classes/PostgreSQLAdapter.m; sourceTree = "<group>"; };
@@ -118,6 +115,9 @@
 		FAC7D977194C9B82003630A0 /* ErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ErrorView.xib; path = Views/ErrorView.xib; sourceTree = "<group>"; };
 		FAC7D979194C9E0B003630A0 /* DarkBorederedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DarkBorederedView.h; path = Classes/DarkBorederedView.h; sourceTree = "<group>"; };
 		FAC7D97A194C9E0B003630A0 /* DarkBorederedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DarkBorederedView.m; path = Classes/DarkBorederedView.m; sourceTree = "<group>"; };
+		FAC7D980194CAD4D003630A0 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultsViewController.h; path = Classes/ResultsViewController.h; sourceTree = "<group>"; };
+		FAC7D981194CAD4D003630A0 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultsViewController.m; path = Classes/ResultsViewController.m; sourceTree = "<group>"; };
+		FAC7D982194CAD4D003630A0 /* ResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultsViewController.xib; path = Classes/ResultsViewController.xib; sourceTree = "<group>"; };
 		FAFEB67B19198D6C00E9FDB3 /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConnectViewController.h; path = Classes/ConnectViewController.h; sourceTree = "<group>"; };
 		FAFEB67C19198D6C00E9FDB3 /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConnectViewController.m; path = Classes/ConnectViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -181,8 +181,6 @@
 				FA75525A193691700068C776 /* SchemaViewController.m */,
 				FA75525E193697BD0068C776 /* BasicDataViewController.h */,
 				FA75525F193697BD0068C776 /* BasicDataViewController.m */,
-				FA75524B193688790068C776 /* ResultTableViewController.h */,
-				FA75524C193688790068C776 /* ResultTableViewController.m */,
 				FA755264193699AD0068C776 /* QueryViewController.h */,
 				FA755265193699AD0068C776 /* QueryViewController.m */,
 			);
@@ -253,6 +251,8 @@
 				FAFEB67C19198D6C00E9FDB3 /* ConnectViewController.m */,
 				FA2F818E191E80C800C308F2 /* ConnectionViewController.h */,
 				FA2F818F191E80C800C308F2 /* ConnectionViewController.m */,
+				FAC7D980194CAD4D003630A0 /* ResultsViewController.h */,
+				FAC7D981194CAD4D003630A0 /* ResultsViewController.m */,
 				FAC7D97C194C9E11003630A0 /* Error */,
 				FA755250193689990068C776 /* DatabaseViews */,
 				FA337EAD1927BF22000E442A /* Helpers */,
@@ -302,6 +302,7 @@
 		FAC2F7AB191985B500E3AB81 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				FAC7D982194CAD4D003630A0 /* ResultsViewController.xib */,
 				FAC2F78019197F8600E3AB81 /* MainMenu.xib */,
 				FA75526C193699F40068C776 /* CrateWindowController.xib */,
 				FA75526B193699F40068C776 /* ConnectViewController.xib */,
@@ -309,7 +310,6 @@
 				FA75526F193699F40068C776 /* SchemaViewController.xib */,
 				FA755269193699F40068C776 /* BasicDataViewController.xib */,
 				FA75526D193699F40068C776 /* QueryViewController.xib */,
-				FA75526E193699F40068C776 /* ResultTableViewController.xib */,
 				FAC7D977194C9B82003630A0 /* ErrorView.xib */,
 			);
 			name = Nibs;
@@ -408,9 +408,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA1C5BEE1944D0D100701FB4 /* MainMenu.xib in Resources */,
-				FA755275193699F40068C776 /* ResultTableViewController.xib in Resources */,
 				FA755276193699F40068C776 /* SchemaViewController.xib in Resources */,
 				FAC7D978194C9B82003630A0 /* ErrorView.xib in Resources */,
+				FAC7D984194CAD4D003630A0 /* ResultsViewController.xib in Resources */,
 				FAC2F77619197F8500E3AB81 /* InfoPlist.strings in Resources */,
 				FA755273193699F40068C776 /* CrateWindowController.xib in Resources */,
 				FAC2F78719197F8600E3AB81 /* Images.xcassets in Resources */,
@@ -514,9 +514,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC7D983194CAD4D003630A0 /* ResultsViewController.m in Sources */,
 				FAC2F77F19197F8600E3AB81 /* AppDelegate.m in Sources */,
 				FA2F8189191E65AD00C308F2 /* ColouredView.m in Sources */,
-				FA75524E193688790068C776 /* ResultTableViewController.m in Sources */,
 				FAFEB67E19198D6C00E9FDB3 /* ConnectViewController.m in Sources */,
 				FA755261193697BD0068C776 /* BasicDataViewController.m in Sources */,
 				FAA3C43B192022E800B31C34 /* NSManagedObject+Dictionary.m in Sources */,

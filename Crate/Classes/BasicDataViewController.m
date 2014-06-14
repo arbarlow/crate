@@ -18,9 +18,15 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Initialization code here.
+        _resultsController = [[ResultsViewController alloc] initWithNibName:@"ResultsViewController" bundle:nil];
+        self.view = _resultsController.view;
     }
     return self;
+}
+
+-(void)displayResults:(id <DBResultSet>)results
+{
+    [_resultsController displayResults:results];
 }
 
 @end

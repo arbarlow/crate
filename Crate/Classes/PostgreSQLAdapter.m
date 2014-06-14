@@ -260,7 +260,8 @@ ORDER BY table_type, table_name"
 
 - (NSUInteger)indexForFieldWithIdentifier:(NSString*)identifier
 {
-    return PQfnumber(res, [identifier UTF8String]);
+    NSString *fieldID = [NSString stringWithFormat:@"\"%@\"", identifier];
+    return PQfnumber(res, [fieldID UTF8String]);
 }
 
 #pragma mark - Records

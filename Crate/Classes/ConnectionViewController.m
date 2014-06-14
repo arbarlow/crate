@@ -75,6 +75,17 @@
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
-    NSLog(@"hello %@", aNotification.object);
+    NSInteger index = [(NSTableView*)aNotification.object selectedRow];
+    if (index <= [_tables count]) {
+        NSString *tableName = [[_tables objectAtIndex:index] name];
+        NSString *query = [NSString stringWithFormat:@"SELECT * from %@ LIMIT 1000", tableName];
+        [_dbConnection execQuery:query success:^(id<DBResultSet> resultSet, NSTimeInterval elapsedTime) {
+            [_basicDataView displayResults:resultSet];
+        } failure:^(NSString *error) {
+            [ErrorView displayForView:[self.view.subviews lastObject]
+                                title:@"Query Error"
+                              message:error];
+        }];
+    }
 }
 @end
