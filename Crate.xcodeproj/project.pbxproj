@@ -243,9 +243,9 @@
 		FAC2F77119197F8500E3AB81 /* Crate */ = {
 			isa = PBXGroup;
 			children = (
-				FAC2F77D19197F8600E3AB81 /* AppDelegate.h */,
 				FAC2F77E19197F8600E3AB81 /* AppDelegate.m */,
 				FAC2F7A6191985A700E3AB81 /* CrateWindowController.h */,
+				FAC2F77D19197F8600E3AB81 /* AppDelegate.h */,
 				FAC2F7A7191985A700E3AB81 /* CrateWindowController.m */,
 				FAFEB67B19198D6C00E9FDB3 /* ConnectViewController.h */,
 				FAFEB67C19198D6C00E9FDB3 /* ConnectViewController.m */,

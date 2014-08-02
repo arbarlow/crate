@@ -7,7 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ResultsViewController.h"
 
 @interface SchemaViewController : NSViewController
+
+@property (nonatomic, strong) id<DBConnection> dbConnection;
+@property (nonatomic, strong) ResultsViewController *resultsController;
+
+-(void)displaySchema:(NSString*)tableName;
 
 @end

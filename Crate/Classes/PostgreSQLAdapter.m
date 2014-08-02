@@ -15,6 +15,10 @@ FROM information_schema.tables \
 WHERE table_type = 'BASE TABLE' \
 AND table_schema = 'public' \
 ORDER BY table_type, table_name"
+#define SCHEMA_QUERY(table) [NSString stringWithFormat:@"\
+SELECT column_name, udt_name, data_type, column_default, is_nullable, \
+       character_maximum_length, numeric_precision, collation_schema, collation_name \
+from INFORMATION_SCHEMA.COLUMNS where table_name = '%@'", table]
 
 @implementation PostgreSQLAdapter
 {
@@ -75,7 +79,7 @@ ORDER BY table_type, table_name"
           success:(void (^)(id <DBResultSet> resultSet, NSTimeInterval elapsedTime))success
           failure:(void (^)(NSString *error))failure
 {
-    // Terminate SQL so errors are raised with bas SQL
+    // Terminate SQL so errors are raised with bad SQL
     query = [query stringByAppendingString:@";"];
     
     // Exec the query
@@ -139,6 +143,13 @@ ORDER BY table_type, table_name"
     } failure:^(NSString *error) {
         failure(error);
     }];
+}
+
+- (void)schemaForTable:(NSString*)tableName
+               success:(void (^)(id <DBResultSet> resultSet, NSTimeInterval elapsedTime))success
+               failure:(void (^)(NSString *error))failure
+{
+    [self execQuery:SCHEMA_QUERY(tableName) success:success failure:failure];
 }
 
 - (NSString *)connectionStringFromDictionary:(NSDictionary*)dict

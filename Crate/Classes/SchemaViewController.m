@@ -18,9 +18,21 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
+        _resultsController = [[ResultsViewController alloc] initWithNibName:@"ResultsViewController" bundle:nil];
+        self.view = _resultsController.view;
     }
     return self;
+}
+
+-(void)displaySchema:(NSString*)tableName
+{
+    [_dbConnection schemaForTable:tableName success:^(id<DBResultSet> resultSet, NSTimeInterval elapsedTime) {
+        [_resultsController displayResults:resultSet];
+    } failure:^(NSString *error) {
+        [ErrorView displayForView:[_resultsController.view.subviews lastObject]
+                            title:@"Schema loading"
+                          message:error];
+    }];
 }
 
 @end

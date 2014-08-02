@@ -58,7 +58,11 @@
 {
     
     NSUInteger fieldIndex = [_results indexForFieldWithIdentifier:tableColumn.identifier];
-    return [_results valueAtRecordIndex:row forFieldIndex:fieldIndex];
+    id result = [_results valueAtRecordIndex:row forFieldIndex:fieldIndex];
+    if ([result isEqualToString:@""]) {
+        result = [[NSMutableAttributedString alloc] initWithString:@"NULL" attributes:@{NSForegroundColorAttributeName: [NSColor lightGrayColor]}];
+    }
+    return result;
 }
 
 @end

@@ -37,6 +37,10 @@
 - (void)tablesForDatabaseWithSuccess:(void (^)(NSArray *tables))success
                               failure:(void (^)(NSString *error))failure;
 
+- (void)schemaForTable:(NSString*)tableName
+               success:(void (^)(id <DBResultSet> resultSet, NSTimeInterval elapsedTime))success
+               failure:(void (^)(NSString *error))failure;
+
 
 @end
 
