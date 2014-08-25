@@ -2,7 +2,7 @@
 Crate is a database viewer (and later an editor) for OSX
 =====
 
-![Screenshot](https://raw.githubusercontent.com/arbarlow/crate/master/screens/screen1.jpg)
+![Screenshot](https://raw.githubusercontent.com/arbarlow/crate/master/screens/screen1.png)
 
 ## Status
 
