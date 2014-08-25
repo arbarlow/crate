@@ -9,16 +9,24 @@
 #import "PostgreSQLAdapter.h"
 
 #define DATABASES_QUERY @"SELECT datname FROM pg_database WHERE datistemplate = false ORDER BY datname ASC"
+
 #define TABLES_QUERY @"\
 SELECT table_name \
 FROM information_schema.tables \
 WHERE table_type = 'BASE TABLE' \
 AND table_schema = 'public' \
 ORDER BY table_type, table_name"
+
 #define SCHEMA_QUERY(table) [NSString stringWithFormat:@"\
-SELECT column_name, udt_name, data_type, column_default, is_nullable, \
-       character_maximum_length, numeric_precision, collation_schema, collation_name \
-from INFORMATION_SCHEMA.COLUMNS where table_name = '%@'", table]
+SELECT \
+    column_name, udt_name, data_type, column_default, is_nullable, \
+    character_maximum_length, numeric_precision, collation_schema, collation_name \
+FROM \
+    INFORMATION_SCHEMA.COLUMNS \
+WHERE \
+    table_name = '%@'", table]
+
+#define INDEXES_FOR_TABLE(table) 
 
 @implementation PostgreSQLAdapter
 {
