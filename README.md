@@ -1,12 +1,13 @@
 # Crate
-Crate is a database viewer (and later an editor) for OSX
 =====
+
+Crate is a database viewer (and later an editor) for OSX
 
 ![Screenshot](https://raw.githubusercontent.com/arbarlow/crate/master/screens/screen1.png)
 
 ## Status
 
-Right now Crate is very young and needs a lot of work doing which can be tracked via an open [Trello board](https://trello.com/b/giqJQwWP/crate)
+Right now Crate is very young and needs a lot of work doing which can be seen and tracked via an open [Trello board](https://trello.com/b/giqJQwWP/crate)
 
 ## Database support
 
