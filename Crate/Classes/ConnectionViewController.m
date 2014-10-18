@@ -30,7 +30,7 @@
 
 -(void)loadView
 {
-    [super loadView];
+[super loadView];
     
     // Set schema as first view
     _schemaView.view.frame = [[self.view.subviews lastObject] frame];

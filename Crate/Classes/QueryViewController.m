@@ -18,9 +18,16 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Initialization code here.
+        _resultsController = [[ResultsViewController alloc] initWithNibName:@"ResultsViewController" bundle:nil];
     }
     return self;
+}
+
+-(void)loadView {
+    [super loadView];
+    [self.view replaceSubview:[self.view.subviews lastObject] with:_resultsController.view];
+    
+//    [_resultsController.view addConstraint:NSLayoutconstraint]
 }
 
 @end

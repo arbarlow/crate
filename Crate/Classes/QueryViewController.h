@@ -7,7 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ResultsViewController.h"
 
 @interface QueryViewController : NSViewController
+
+@property (weak) IBOutlet NSTextField *queryField;
+@property (strong, nonatomic) ResultsViewController *resultsController;
 
 @end
