@@ -21,7 +21,7 @@
 
 - (void)drawRect:(NSRect)rect
 {
-    NSColor *bgColor = [NSColor colorWithCalibratedWhite:0.0 alpha:0.35];
+    NSColor *bgColor = [NSColor colorWithCalibratedWhite:0.0 alpha:0.6];
     NSRect bgRect = rect;
     int minX = NSMinX(bgRect);
     int midX = NSMidX(bgRect);

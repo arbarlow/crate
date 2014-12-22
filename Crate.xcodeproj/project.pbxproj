@@ -13,7 +13,9 @@
 		FA2F8189191E65AD00C308F2 /* ColouredView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8188191E65AD00C308F2 /* ColouredView.m */; };
 		FA2F818C191E6D5800C308F2 /* Favourite.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2F818B191E6D5800C308F2 /* Favourite.m */; };
 		FA2F8191191E80C800C308F2 /* ConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2F818F191E80C800C308F2 /* ConnectionViewController.m */; };
+		FA3F8C2B1A06A3570008D24A /* MGSFragaria.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA3F8C2A1A06A3570008D24A /* MGSFragaria.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA4DB863192BA65000F76981 /* PostgreSQLAdapterTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA4DB862192BA65000F76981 /* PostgreSQLAdapterTests.mm */; };
+		FA4E51C31A06A2A000F17791 /* MGSFragaria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4E51C21A06A2A000F17791 /* MGSFragaria.framework */; };
 		FA67B2DC1946605B005F7893 /* ErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA67B2DA1946605B005F7893 /* ErrorView.m */; };
 		FA75525C193691700068C776 /* SchemaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75525A193691700068C776 /* SchemaViewController.m */; };
 		FA755261193697BD0068C776 /* BasicDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75525F193697BD0068C776 /* BasicDataViewController.m */; };
@@ -57,11 +59,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FA4E51C41A06A2B400F17791 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FA3F8C2B1A06A3570008D24A /* MGSFragaria.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0661D6697CA2041F1A430455 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		2C3FE7438260420F80A7885E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A3AE64AFF534BDDBA9D3A3E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		BE01FFC56FE546CD9CB15241 /* Pods-CrateTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrateTests.xcconfig"; path = "Pods/Pods-CrateTests.xcconfig"; sourceTree = "<group>"; };
+		30490FC97A89A01D2E8E406B /* Pods-CrateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrateTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CrateTests/Pods-CrateTests.release.xcconfig"; sourceTree = "<group>"; };
+		9842424063DC1359CD5A3B50 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		EC4315FDC724489B901F0A1A /* libPods-CrateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CrateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED6ED66F1DD01C64B8DCCDC3 /* Pods-CrateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrateTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CrateTests/Pods-CrateTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA2F8187191E65AD00C308F2 /* ColouredView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColouredView.h; path = Classes/ColouredView.h; sourceTree = "<group>"; };
 		FA2F8188191E65AD00C308F2 /* ColouredView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColouredView.m; path = Classes/ColouredView.m; sourceTree = "<group>"; };
 		FA2F818A191E6D5800C308F2 /* Favourite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Favourite.h; path = Classes/Favourite.h; sourceTree = "<group>"; };
@@ -69,7 +86,9 @@
 		FA2F818E191E80C800C308F2 /* ConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConnectionViewController.h; path = Classes/ConnectionViewController.h; sourceTree = "<group>"; };
 		FA2F818F191E80C800C308F2 /* ConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConnectionViewController.m; path = Classes/ConnectionViewController.m; sourceTree = "<group>"; };
 		FA2F8193191E846D00C308F2 /* DBProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBProtocols.h; path = Classes/DBProtocols.h; sourceTree = "<group>"; };
+		FA3F8C2A1A06A3570008D24A /* MGSFragaria.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MGSFragaria.framework; sourceTree = "<group>"; };
 		FA4DB862192BA65000F76981 /* PostgreSQLAdapterTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PostgreSQLAdapterTests.mm; sourceTree = "<group>"; };
+		FA4E51C21A06A2A000F17791 /* MGSFragaria.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MGSFragaria.framework; path = FragariaFramework/build/Debug/MGSFragaria.framework; sourceTree = "<group>"; };
 		FA67B2D91946605B005F7893 /* ErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ErrorView.h; path = Classes/ErrorView.h; sourceTree = "<group>"; };
 		FA67B2DA1946605B005F7893 /* ErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ErrorView.m; path = Classes/ErrorView.m; sourceTree = "<group>"; };
 		FA755259193691700068C776 /* SchemaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SchemaViewController.h; path = Classes/SchemaViewController.h; sourceTree = "<group>"; };
@@ -127,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4E51C31A06A2A000F17791 /* MGSFragaria.framework in Frameworks */,
 				FAA3C42E191FD19200B31C34 /* libpq.5.6.dylib in Frameworks */,
 				FAC2F76C19197F8500E3AB81 /* Cocoa.framework in Frameworks */,
 				18F498A2C09D4B7299B44E90 /* libPods.a in Frameworks */,
@@ -146,6 +166,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		993D570B70708DAE685F45FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9842424063DC1359CD5A3B50 /* Pods.debug.xcconfig */,
+				0661D6697CA2041F1A430455 /* Pods.release.xcconfig */,
+				ED6ED66F1DD01C64B8DCCDC3 /* Pods-CrateTests.debug.xcconfig */,
+				30490FC97A89A01D2E8E406B /* Pods-CrateTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FA2F818D191E6D6200C308F2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,12 +230,12 @@
 		FAC2F75F19197F8500E3AB81 = {
 			isa = PBXGroup;
 			children = (
+				FA3F8C2A1A06A3570008D24A /* MGSFragaria.framework */,
 				FAC2F77119197F8500E3AB81 /* Crate */,
 				FAC2F79219197F8600E3AB81 /* CrateTests */,
 				FAC2F76A19197F8500E3AB81 /* Frameworks */,
 				FAC2F76919197F8500E3AB81 /* Products */,
-				7A3AE64AFF534BDDBA9D3A3E /* Pods.xcconfig */,
-				BE01FFC56FE546CD9CB15241 /* Pods-CrateTests.xcconfig */,
+				993D570B70708DAE685F45FD /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -220,6 +251,7 @@
 		FAC2F76A19197F8500E3AB81 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA4E51C21A06A2A000F17791 /* MGSFragaria.framework */,
 				FAA3C42D191FD19200B31C34 /* libpq.5.6.dylib */,
 				FAC2F76B19197F8500E3AB81 /* Cocoa.framework */,
 				FAC2F78D19197F8600E3AB81 /* XCTest.framework */,
@@ -244,8 +276,8 @@
 			isa = PBXGroup;
 			children = (
 				FAC2F77E19197F8600E3AB81 /* AppDelegate.m */,
-				FAC2F7A6191985A700E3AB81 /* CrateWindowController.h */,
 				FAC2F77D19197F8600E3AB81 /* AppDelegate.h */,
+				FAC2F7A6191985A700E3AB81 /* CrateWindowController.h */,
 				FAC2F7A7191985A700E3AB81 /* CrateWindowController.m */,
 				FAFEB67B19198D6C00E9FDB3 /* ConnectViewController.h */,
 				FAFEB67C19198D6C00E9FDB3 /* ConnectViewController.m */,
@@ -338,6 +370,7 @@
 				FAC2F76519197F8500E3AB81 /* Frameworks */,
 				FAC2F76619197F8500E3AB81 /* Resources */,
 				04095ADB6EB04C0EA066BBF8 /* Copy Pods Resources */,
+				FA4E51C41A06A2B400F17791 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -446,7 +479,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		12466C68E51F4F94BD8500AC /* Copy Pods Resources */ = {
@@ -461,7 +494,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-CrateTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CrateTests/Pods-CrateTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		23CC9D15AAE64CB29FD59CC0 /* Check Pods Manifest.lock */ = {
@@ -620,7 +653,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx10.9;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -654,7 +687,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx10.9;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -662,47 +695,59 @@
 		};
 		FAC2F79D19197F8600E3AB81 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A3AE64AFF534BDDBA9D3A3E /* Pods.xcconfig */;
+			baseConfigurationReference = 9842424063DC1359CD5A3B50 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Crate-fyltznzajonsvccavdpwrzsfpetd/Build/Products/Debug",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/FragariaFramework/build/Debug",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Crate/Crate-Prefix.pch";
 				INFOPLIST_FILE = "Crate/Crate-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/usr/local/Cellar/postgresql/9.3.4/lib,
+					/usr/local/Cellar/postgresql/9.3.5_1/lib,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = /usr/local/Cellar/postgresql/9.3.4/include;
+				USER_HEADER_SEARCH_PATHS = /usr/local/Cellar/postgresql/9.3.5_1/include;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		FAC2F79E19197F8600E3AB81 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A3AE64AFF534BDDBA9D3A3E /* Pods.xcconfig */;
+			baseConfigurationReference = 0661D6697CA2041F1A430455 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Crate-fyltznzajonsvccavdpwrzsfpetd/Build/Products/Debug",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/FragariaFramework/build/Debug",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Crate/Crate-Prefix.pch";
 				INFOPLIST_FILE = "Crate/Crate-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/usr/local/Cellar/postgresql/9.3.4/lib,
+					/usr/local/Cellar/postgresql/9.3.5_1/lib,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = /usr/local/Cellar/postgresql/9.3.4/include;
+				USER_HEADER_SEARCH_PATHS = /usr/local/Cellar/postgresql/9.3.5_1/include;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
 		FAC2F7A019197F8600E3AB81 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE01FFC56FE546CD9CB15241 /* Pods-CrateTests.xcconfig */;
+			baseConfigurationReference = ED6ED66F1DD01C64B8DCCDC3 /* Pods-CrateTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Crate.app/Contents/MacOS/Crate";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -720,14 +765,14 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				USER_HEADER_SEARCH_PATHS = /usr/local/Cellar/postgresql/9.3.4/include;
+				USER_HEADER_SEARCH_PATHS = /usr/local/Cellar/postgresql/9.3.5_1/include;
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
 		FAC2F7A119197F8600E3AB81 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE01FFC56FE546CD9CB15241 /* Pods-CrateTests.xcconfig */;
+			baseConfigurationReference = 30490FC97A89A01D2E8E406B /* Pods-CrateTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Crate.app/Contents/MacOS/Crate";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -741,7 +786,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				USER_HEADER_SEARCH_PATHS = /usr/local/Cellar/postgresql/9.3.4/include;
+				USER_HEADER_SEARCH_PATHS = /usr/local/Cellar/postgresql/9.3.5_1/include;
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;

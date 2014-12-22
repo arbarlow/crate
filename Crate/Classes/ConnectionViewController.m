@@ -48,6 +48,7 @@
             break;
         case 2:
             [self switchToView:_queryView.view];
+            _queryView.dbConnection = _dbConnection;
             break;
         default:
             break;

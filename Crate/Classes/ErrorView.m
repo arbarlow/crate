@@ -53,22 +53,4 @@
     return errorView;
 }
 
-//- (id)initWithFrame:(NSRect)frame
-//{
-//    self = [super initWithFrame:frame];
-//    if (self) {
-//        NSImageView *errorCross = [[NSImageView alloc] initWithFrame:CGRectMake(16, frame.size.height - 46, 32, 32)];
-//        errorCross.image = [NSImage imageNamed:@"cross"];
-//        [self addSubview:errorCross];
-//        
-//        NSTextField *title = [[NSTextField alloc] initWithFrame:CGRectMake(36, frame.size.height - 46, frame.size.width - 36, 32)];
-//        [title setStringValue:@"Error"];
-//        title.backgroundColor = [NSColor clearColor];
-//        
-//        [self addSubview:title];
-//        
-//    }
-//    return self;
-//}
-
 @end

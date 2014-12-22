@@ -38,19 +38,18 @@
     return [[self favourites] count];
 }
 
-- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
-{
-    Favourite *fav = [[self favourites] objectAtIndex:rowIndex];
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     
-    NSString *identifier = aTableColumn.identifier;
-    if ([identifier isEqualToString:@"0"]) {
-        return @"Icon";
-    }else if ([identifier isEqualToString:@"1"]){
-        return fav.name;
-    }else if ([identifier isEqualToString:@"2"]){
-        return @"Edit";
+    Favourite *fav = [[self favourites] objectAtIndex:row];
+    NSString *identifier = tableColumn.identifier;
+    
+    NSView *view = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
+
+    if ([identifier isEqualToString:@"0"]){
+        [[[view subviews] lastObject] setStringValue:fav.name];
+        return view;
     }else{
-        return @"";
+        return nil;
     }
 }
 
