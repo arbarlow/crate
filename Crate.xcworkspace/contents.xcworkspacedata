@@ -2,10 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:FragariaFramework/Fragaria.xcodeproj">
+      location = "group:Crate.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Crate.xcodeproj">
+      location = "group:FragariaFramework/Fragaria.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

@@ -8,5 +8,5 @@ pod 'INAppStoreWindow'
 pod 'PureLayout'
 
 target 'CrateTests', :exclusive => true do
-  pod 'XCTAsyncTestCase'
+  pod 'XCTAsyncTestCase', '0.1.0'
 end

@@ -9,7 +9,6 @@
 
 #import "ConnectViewController.h"
 #import "CrateWindowController.h"
-#import "ColouredView.h"
 
 @interface ConnectViewController ()
 
@@ -30,6 +29,11 @@
 @end
 
 @implementation ConnectViewController
+
+-(void)loadView{
+    [super loadView];
+    [_tableView selectRowIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 1)] byExtendingSelection:NO];
+}
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
 {
@@ -54,30 +58,80 @@
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
     Favourite *fav = _favs[[(NSTableView*)aNotification.object selectedRow]];
-    fav.name ? [_nameField setStringValue:fav.name] : [[_nameField cell] setPlaceholderString:@"NULL"];
-    fav.host ? [_hostField setStringValue:fav.host] : [[_hostField cell] setPlaceholderString:@"NULL"];
-    fav.port ? [_portField setStringValue:fav.port] : [[_portField cell] setPlaceholderString:@"NULL"];
-    fav.user ? [_userField setStringValue:fav.user] : [[_userField cell] setPlaceholderString:@"NULL"];
-    fav.database_name ? [_dbField setStringValue:fav.database_name] : [[_dbField cell] setPlaceholderString:@"NULL"];
-    fav.password ? [_passwordField setStringValue:fav.password] : [[_passwordField cell] setPlaceholderString:@"NULL"];;
+    fav.name ? [_nameField setStringValue:fav.name] : [self setCellToBlank:_nameField];
+    fav.host ? [_hostField setStringValue:fav.host] : [self setCellToBlank:_hostField];
+    fav.port ? [_portField setStringValue:fav.port] : [self setCellToBlank:_portField];
+    fav.user ? [_userField setStringValue:fav.user] : [self setCellToBlank:_userField];
+    fav.database_name ? [_dbField setStringValue:fav.database_name] : [self setCellToBlank:_dbField];
+    fav.password ? [_passwordField setStringValue:fav.password] : [self setCellToBlank:_passwordField];
     
     [_connectButton setTitle:@"Connect"];
 }
 
+-(void)setCellToBlank:(NSTextField*)field{
+    [field setStringValue:@""];
+    [[field cell] setPlaceholderString:@"NULL"];
+}
+
 - (IBAction)didClickConnect:(id)sender {
     Favourite *fav = _favs[[_tableView selectedRow]];
-    [_delegate connectWithDictionary:[fav asDictionary]];
+    
+    NSProcessInfo *processInfo = [NSProcessInfo processInfo];
+    [processInfo disableSuddenTermination];
+    [processInfo disableAutomaticTermination:@"Application is currently saving to persistent store"];
+    
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        fav.name = [[_nameField stringValue] isEqualToString:@""] ? nil : [_nameField stringValue];
+        fav.host = [[_hostField stringValue] isEqualToString:@""] ? nil : [_hostField stringValue];
+        fav.port = [[_portField stringValue] isEqualToString:@""] ? nil : [_portField stringValue];
+        fav.user = [[_userField stringValue] isEqualToString:@""] ? nil : [_userField stringValue];
+        fav.database_name = [[_dbField stringValue] isEqualToString:@""] ? nil : [_dbField stringValue];
+        fav.password = [[_passwordField stringValue] isEqualToString:@""] ? nil : [_passwordField stringValue];
+    } completion:^(BOOL success, NSError *error) {
+        [processInfo enableSuddenTermination];
+        [processInfo enableAutomaticTermination:@"Application has finished saving to the persistent store"];
+        
+        [_delegate connectWithDictionary:[fav asDictionary]];
+    }];
 }
 
 - (void)controlTextDidChange:(NSNotification *)aNotification
 {
     [_connectButton setTitle:@"Save & Connect"];
 }
+
+- (IBAction)didClickAdd:(id)sender {
+    Favourite *fav = [Favourite MR_createEntity];
+    fav.name = @"Untitled";
+    fav.timestamp = [NSDate date];
+    _favs = [Favourite MR_findAllSortedBy:@"timestamp" ascending:YES];
+    [MagicalRecord saveUsingCurrentThreadContextWithBlock:^(NSManagedObjectContext *localContext) {
+        
+    } completion:^(BOOL success, NSError *error) {
+        [_tableView reloadData];
+        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:[_favs count]-1];
+        [_tableView selectRowIndexes:indexSet byExtendingSelection:NO];
+    }];
+}
+
+- (IBAction)didClickRemove:(id)sender {
+    Favourite *fav = _favs[[_tableView selectedRow]];
+    [fav MR_deleteEntity];
+    _favs = [Favourite MR_findAllSortedBy:@"timestamp" ascending:YES];
+    
+    
+    [MagicalRecord saveUsingCurrentThreadContextWithBlock:^(NSManagedObjectContext *localContext) {
+        
+    } completion:^(BOOL success, NSError *error) {
+        [_tableView reloadData];
+    }];
+}
+
          
 -(NSArray*)favourites
 {
     if (!_favs) {
-        _favs = [Favourite MR_findAll];
+        _favs = [Favourite MR_findAllSortedBy:@"timestamp" ascending:YES];
     }
     
     return _favs;

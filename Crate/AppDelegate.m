@@ -56,6 +56,7 @@ static NSString *storeName = @"Crate.sqlite";
             defaultFav.name = @"Localhost";
             defaultFav.host = @"localhost";
             defaultFav.database_name = @"postgres";
+            defaultFav.timestamp = [NSDate date];
         }];
     }
 }

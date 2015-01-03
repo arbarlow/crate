@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		04CF5E7D374D4DC3875E8289 /* libPods-CrateTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC4315FDC724489B901F0A1A /* libPods-CrateTests.a */; };
 		18F498A2C09D4B7299B44E90 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3FE7438260420F80A7885E /* libPods.a */; };
+		FA1629A61A571943000701CC /* Favourite.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1629A51A571943000701CC /* Favourite.m */; };
 		FA1C5BEE1944D0D100701FB4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC2F78019197F8600E3AB81 /* MainMenu.xib */; };
 		FA2F8189191E65AD00C308F2 /* ColouredView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8188191E65AD00C308F2 /* ColouredView.m */; };
-		FA2F818C191E6D5800C308F2 /* Favourite.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2F818B191E6D5800C308F2 /* Favourite.m */; };
 		FA2F8191191E80C800C308F2 /* ConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2F818F191E80C800C308F2 /* ConnectionViewController.m */; };
 		FA3F8C2B1A06A3570008D24A /* MGSFragaria.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA3F8C2A1A06A3570008D24A /* MGSFragaria.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA4DB863192BA65000F76981 /* PostgreSQLAdapterTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA4DB862192BA65000F76981 /* PostgreSQLAdapterTests.mm */; };
@@ -46,6 +46,11 @@
 		FAC7D97B194C9E0B003630A0 /* DarkBorederedView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC7D97A194C9E0B003630A0 /* DarkBorederedView.m */; };
 		FAC7D983194CAD4D003630A0 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC7D981194CAD4D003630A0 /* ResultsViewController.m */; };
 		FAC7D984194CAD4D003630A0 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC7D982194CAD4D003630A0 /* ResultsViewController.xib */; };
+		FAE317D21A5800AC006F1F75 /* MySQLAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE317D11A5800AC006F1F75 /* MySQLAdapter.m */; };
+		FAE317D41A583F08006F1F75 /* libmysqlclient.18.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE317D31A583F08006F1F75 /* libmysqlclient.18.dylib */; };
+		FAE317D61A584165006F1F75 /* MySQLAdapterTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAE317D51A584165006F1F75 /* MySQLAdapterTests.mm */; };
+		FAE317DD1A5843ED006F1F75 /* employees.sql in Resources */ = {isa = PBXBuildFile; fileRef = FAE317DB1A5843ED006F1F75 /* employees.sql */; };
+		FAE317DE1A5843ED006F1F75 /* load_employees.dump in Resources */ = {isa = PBXBuildFile; fileRef = FAE317DC1A5843ED006F1F75 /* load_employees.dump */; };
 		FAFEB67E19198D6C00E9FDB3 /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFEB67C19198D6C00E9FDB3 /* ConnectViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -79,10 +84,10 @@
 		9842424063DC1359CD5A3B50 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		EC4315FDC724489B901F0A1A /* libPods-CrateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CrateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED6ED66F1DD01C64B8DCCDC3 /* Pods-CrateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrateTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CrateTests/Pods-CrateTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FA1629A41A571943000701CC /* Favourite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Favourite.h; path = Classes/Favourite.h; sourceTree = "<group>"; };
+		FA1629A51A571943000701CC /* Favourite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Favourite.m; path = Classes/Favourite.m; sourceTree = "<group>"; };
 		FA2F8187191E65AD00C308F2 /* ColouredView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColouredView.h; path = Classes/ColouredView.h; sourceTree = "<group>"; };
 		FA2F8188191E65AD00C308F2 /* ColouredView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColouredView.m; path = Classes/ColouredView.m; sourceTree = "<group>"; };
-		FA2F818A191E6D5800C308F2 /* Favourite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Favourite.h; path = Classes/Favourite.h; sourceTree = "<group>"; };
-		FA2F818B191E6D5800C308F2 /* Favourite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Favourite.m; path = Classes/Favourite.m; sourceTree = "<group>"; };
 		FA2F818E191E80C800C308F2 /* ConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConnectionViewController.h; path = Classes/ConnectionViewController.h; sourceTree = "<group>"; };
 		FA2F818F191E80C800C308F2 /* ConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConnectionViewController.m; path = Classes/ConnectionViewController.m; sourceTree = "<group>"; };
 		FA2F8193191E846D00C308F2 /* DBProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBProtocols.h; path = Classes/DBProtocols.h; sourceTree = "<group>"; };
@@ -137,6 +142,12 @@
 		FAC7D980194CAD4D003630A0 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultsViewController.h; path = Classes/ResultsViewController.h; sourceTree = "<group>"; };
 		FAC7D981194CAD4D003630A0 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultsViewController.m; path = Classes/ResultsViewController.m; sourceTree = "<group>"; };
 		FAC7D982194CAD4D003630A0 /* ResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultsViewController.xib; path = Classes/ResultsViewController.xib; sourceTree = "<group>"; };
+		FAE317D01A5800AC006F1F75 /* MySQLAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MySQLAdapter.h; path = Classes/MySQLAdapter.h; sourceTree = "<group>"; };
+		FAE317D11A5800AC006F1F75 /* MySQLAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MySQLAdapter.m; path = Classes/MySQLAdapter.m; sourceTree = "<group>"; };
+		FAE317D31A583F08006F1F75 /* libmysqlclient.18.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmysqlclient.18.dylib; path = ../../../../usr/local/Cellar/mysql/5.6.21/lib/libmysqlclient.18.dylib; sourceTree = "<group>"; };
+		FAE317D51A584165006F1F75 /* MySQLAdapterTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MySQLAdapterTests.mm; sourceTree = "<group>"; };
+		FAE317DB1A5843ED006F1F75 /* employees.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = employees.sql; sourceTree = "<group>"; };
+		FAE317DC1A5843ED006F1F75 /* load_employees.dump */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = load_employees.dump; sourceTree = "<group>"; };
 		FAFEB67B19198D6C00E9FDB3 /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConnectViewController.h; path = Classes/ConnectViewController.h; sourceTree = "<group>"; };
 		FAFEB67C19198D6C00E9FDB3 /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConnectViewController.m; path = Classes/ConnectViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE317D41A583F08006F1F75 /* libmysqlclient.18.dylib in Frameworks */,
 				FA4E51C31A06A2A000F17791 /* MGSFragaria.framework in Frameworks */,
 				FAA3C42E191FD19200B31C34 /* libpq.5.6.dylib in Frameworks */,
 				FAC2F76C19197F8500E3AB81 /* Cocoa.framework in Frameworks */,
@@ -180,8 +192,8 @@
 		FA2F818D191E6D6200C308F2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FA2F818A191E6D5800C308F2 /* Favourite.h */,
-				FA2F818B191E6D5800C308F2 /* Favourite.m */,
+				FA1629A41A571943000701CC /* Favourite.h */,
+				FA1629A51A571943000701CC /* Favourite.m */,
 				FAA3C439192022E800B31C34 /* NSManagedObject+Dictionary.h */,
 				FAA3C43A192022E800B31C34 /* NSManagedObject+Dictionary.m */,
 			);
@@ -223,6 +235,8 @@
 			children = (
 				FAA3C42A191FC26C00B31C34 /* PostgreSQLAdapter.h */,
 				FAA3C42B191FC26C00B31C34 /* PostgreSQLAdapter.m */,
+				FAE317D01A5800AC006F1F75 /* MySQLAdapter.h */,
+				FAE317D11A5800AC006F1F75 /* MySQLAdapter.m */,
 			);
 			name = Adapters;
 			sourceTree = "<group>";
@@ -251,6 +265,7 @@
 		FAC2F76A19197F8500E3AB81 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAE317D31A583F08006F1F75 /* libmysqlclient.18.dylib */,
 				FA4E51C21A06A2A000F17791 /* MGSFragaria.framework */,
 				FAA3C42D191FD19200B31C34 /* libpq.5.6.dylib */,
 				FAC2F76B19197F8500E3AB81 /* Cocoa.framework */,
@@ -275,8 +290,8 @@
 		FAC2F77119197F8500E3AB81 /* Crate */ = {
 			isa = PBXGroup;
 			children = (
-				FAC2F77E19197F8600E3AB81 /* AppDelegate.m */,
 				FAC2F77D19197F8600E3AB81 /* AppDelegate.h */,
+				FAC2F77E19197F8600E3AB81 /* AppDelegate.m */,
 				FAC2F7A6191985A700E3AB81 /* CrateWindowController.h */,
 				FAC2F7A7191985A700E3AB81 /* CrateWindowController.m */,
 				FAFEB67B19198D6C00E9FDB3 /* ConnectViewController.h */,
@@ -316,6 +331,7 @@
 			children = (
 				FAC2F79819197F8600E3AB81 /* CrateTests.m */,
 				FA4DB862192BA65000F76981 /* PostgreSQLAdapterTests.mm */,
+				FAE317D51A584165006F1F75 /* MySQLAdapterTests.mm */,
 				FAC2F79319197F8600E3AB81 /* Supporting Files */,
 			);
 			path = CrateTests;
@@ -324,6 +340,7 @@
 		FAC2F79319197F8600E3AB81 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FAE317DF1A5843F0006F1F75 /* MySQL */,
 				FAAA5D34192CBE1400A50E42 /* iso-3166.sql */,
 				FAC2F79419197F8600E3AB81 /* CrateTests-Info.plist */,
 				FAC2F79519197F8600E3AB81 /* InfoPlist.strings */,
@@ -358,6 +375,15 @@
 			name = Error;
 			sourceTree = "<group>";
 		};
+		FAE317DF1A5843F0006F1F75 /* MySQL */ = {
+			isa = PBXGroup;
+			children = (
+				FAE317DB1A5843ED006F1F75 /* employees.sql */,
+				FAE317DC1A5843ED006F1F75 /* load_employees.dump */,
+			);
+			name = MySQL;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -385,7 +411,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAC2F79F19197F8600E3AB81 /* Build configuration list for PBXNativeTarget "CrateTests" */;
 			buildPhases = (
-				FA00E35A192BB49400036B4F /* ShellScript */,
+				FA00E35A192BB49400036B4F /* Load PostgreSQL Test Data */,
+				FAE317E01A58442F006F1F75 /* Load MySQL Test Data */,
 				3864D3B4AAFD476F86F2A0CC /* Check Pods Manifest.lock */,
 				FAC2F78819197F8600E3AB81 /* Sources */,
 				FAC2F78919197F8600E3AB81 /* Frameworks */,
@@ -460,7 +487,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAAA5D35192CBE1400A50E42 /* iso-3166.sql in Resources */,
+				FAE317DE1A5843ED006F1F75 /* load_employees.dump in Resources */,
 				FAC2F79719197F8600E3AB81 /* InfoPlist.strings in Resources */,
+				FAE317DD1A5843ED006F1F75 /* employees.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,18 +556,33 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		FA00E35A192BB49400036B4F /* ShellScript */ = {
+		FA00E35A192BB49400036B4F /* Load PostgreSQL Test Data */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Load PostgreSQL Test Data";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
 			shellScript = "/usr/local/bin/psql postgres -c 'DROP DATABASE IF EXISTS crate_test;' -At\n/usr/local/bin/psql postgres -c 'DROP DATABASE IF EXISTS crate_test_second_db;' -At\n/usr/local/bin/psql postgres -c 'CREATE DATABASE crate_test;' -At\n/usr/local/bin/psql postgres -c 'CREATE DATABASE crate_test_second_db;' -At\n\n/usr/local/bin/psql crate_test -c \"\nCREATE TABLE users (\nid bigserial primary key,\nname varchar(20) NOT NULL,\ncreated_at timestamp default NULL\n);\" -At\n\n/usr/local/bin/psql crate_test -f \"$SRCROOT/CrateTests/iso-3166.sql\"\n\n";
+		};
+		FAE317E01A58442F006F1F75 /* Load MySQL Test Data */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Load MySQL Test Data";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/mysql --user root -t < \"$SRCROOT/CrateTests/employees.sql\"\n/usr/local/bin/mysql --user root crate_test -e \"source $SRCROOT/CrateTests/load_employees.dump\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -556,12 +600,13 @@
 				FA75525C193691700068C776 /* SchemaViewController.m in Sources */,
 				FAC7D97B194C9E0B003630A0 /* DarkBorederedView.m in Sources */,
 				FAC2F7A9191985A700E3AB81 /* CrateWindowController.m in Sources */,
+				FAE317D21A5800AC006F1F75 /* MySQLAdapter.m in Sources */,
 				FA2F8191191E80C800C308F2 /* ConnectionViewController.m in Sources */,
 				FA755267193699AD0068C776 /* QueryViewController.m in Sources */,
+				FA1629A61A571943000701CC /* Favourite.m in Sources */,
 				FA67B2DC1946605B005F7893 /* ErrorView.m in Sources */,
 				FAC2F77819197F8500E3AB81 /* main.m in Sources */,
 				FAA3C42C191FC26C00B31C34 /* PostgreSQLAdapter.m in Sources */,
-				FA2F818C191E6D5800C308F2 /* Favourite.m in Sources */,
 				FAC2F78519197F8600E3AB81 /* Crate.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,6 +616,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAC2F79919197F8600E3AB81 /* CrateTests.m in Sources */,
+				FAE317D61A584165006F1F75 /* MySQLAdapterTests.mm in Sources */,
 				FA4DB863192BA65000F76981 /* PostgreSQLAdapterTests.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -711,10 +757,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/postgresql/9.3.5_1/lib,
+					/usr/local/Cellar/mysql/5.6.21/lib/,
+					/usr/local/Cellar/mysql/5.6.21/lib,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = /usr/local/Cellar/postgresql/9.3.5_1/include;
+				USER_HEADER_SEARCH_PATHS = "/usr/local/Cellar/postgresql/9.3.5_1/include /usr/local/Cellar/mysql/5.6.21/include";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -737,10 +785,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/postgresql/9.3.5_1/lib,
+					/usr/local/Cellar/mysql/5.6.21/lib/,
+					/usr/local/Cellar/mysql/5.6.21/lib,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = /usr/local/Cellar/postgresql/9.3.5_1/include;
+				USER_HEADER_SEARCH_PATHS = "/usr/local/Cellar/postgresql/9.3.5_1/include /usr/local/Cellar/mysql/5.6.21/include";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -765,7 +815,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				USER_HEADER_SEARCH_PATHS = /usr/local/Cellar/postgresql/9.3.5_1/include;
+				USER_HEADER_SEARCH_PATHS = "/usr/local/Cellar/postgresql/9.3.5_1/include /usr/local/Cellar/mysql/5.6.21/include";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -786,7 +836,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				USER_HEADER_SEARCH_PATHS = /usr/local/Cellar/postgresql/9.3.5_1/include;
+				USER_HEADER_SEARCH_PATHS = "/usr/local/Cellar/postgresql/9.3.5_1/include /usr/local/Cellar/mysql/5.6.21/include";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;

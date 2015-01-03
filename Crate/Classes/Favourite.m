@@ -2,8 +2,8 @@
 //  Favourite.m
 //  Crate
 //
-//  Created by Alex Barlow on 10/05/2014.
-//  Copyright (c) 2014 Alex Barlow. All rights reserved.
+//  Created by Alex Barlow on 02/01/2015.
+//  Copyright (c) 2015 Alex Barlow. All rights reserved.
 //
 
 #import "Favourite.h"
@@ -11,11 +11,12 @@
 
 @implementation Favourite
 
-@dynamic name;
-@dynamic host;
-@dynamic port;
 @dynamic database_name;
-@dynamic user;
+@dynamic host;
+@dynamic name;
 @dynamic password;
+@dynamic port;
+@dynamic user;
+@dynamic timestamp;
 
 @end

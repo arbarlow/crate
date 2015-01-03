@@ -10,7 +10,7 @@ DEPENDENCIES:
   - INAppStoreWindow
   - MagicalRecord
   - PureLayout
-  - XCTAsyncTestCase
+  - XCTAsyncTestCase (= 0.1.0)
 
 SPEC CHECKSUMS:
   INAppStoreWindow: 570e4a9768aaac643ef2129d9b018aca2e0157b3
