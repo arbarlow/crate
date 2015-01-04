@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14B25" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Favourite" representedClassName="Favourite" syncable="YES">
+        <attribute name="adapter" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="database_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="host" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -10,6 +11,6 @@
         <attribute name="user" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Favourite" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Favourite" positionX="-63" positionY="-18" width="128" height="165"/>
     </elements>
 </model>

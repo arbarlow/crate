@@ -18,5 +18,6 @@
 @dynamic port;
 @dynamic user;
 @dynamic timestamp;
+@dynamic adapter;
 
 @end

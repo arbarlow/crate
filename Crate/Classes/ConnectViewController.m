@@ -23,8 +23,10 @@
 @property (weak) IBOutlet NSTextField *userField;
 @property (weak) IBOutlet NSTextField *dbField;
 @property (weak) IBOutlet NSSecureTextField *passwordField;
+@property (weak) IBOutlet NSPopUpButton *adapterField;
 
 @property (weak) IBOutlet NSButton *connectButton;
+
 
 @end
 
@@ -64,6 +66,7 @@
     fav.user ? [_userField setStringValue:fav.user] : [self setCellToBlank:_userField];
     fav.database_name ? [_dbField setStringValue:fav.database_name] : [self setCellToBlank:_dbField];
     fav.password ? [_passwordField setStringValue:fav.password] : [self setCellToBlank:_passwordField];
+    [_adapterField selectItemWithTitle:fav.adapter];
     
     [_connectButton setTitle:@"Connect"];
 }
@@ -80,14 +83,15 @@
     [processInfo disableSuddenTermination];
     [processInfo disableAutomaticTermination:@"Application is currently saving to persistent store"];
     
-    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-        fav.name = [[_nameField stringValue] isEqualToString:@""] ? nil : [_nameField stringValue];
-        fav.host = [[_hostField stringValue] isEqualToString:@""] ? nil : [_hostField stringValue];
-        fav.port = [[_portField stringValue] isEqualToString:@""] ? nil : [_portField stringValue];
-        fav.user = [[_userField stringValue] isEqualToString:@""] ? nil : [_userField stringValue];
-        fav.database_name = [[_dbField stringValue] isEqualToString:@""] ? nil : [_dbField stringValue];
-        fav.password = [[_passwordField stringValue] isEqualToString:@""] ? nil : [_passwordField stringValue];
-    } completion:^(BOOL success, NSError *error) {
+    fav.name = [[_nameField stringValue] isEqualToString:@""] ? nil : [_nameField stringValue];
+    fav.host = [[_hostField stringValue] isEqualToString:@""] ? nil : [_hostField stringValue];
+    fav.port = [[_portField stringValue] isEqualToString:@""] ? nil : [_portField stringValue];
+    fav.user = [[_userField stringValue] isEqualToString:@""] ? nil : [_userField stringValue];
+    fav.database_name = [[_dbField stringValue] isEqualToString:@""] ? nil : [_dbField stringValue];
+    fav.password = [[_passwordField stringValue] isEqualToString:@""] ? nil : [_passwordField stringValue];
+    fav.adapter = [_adapterField titleOfSelectedItem];
+    
+    [[NSManagedObjectContext MR_contextForCurrentThread] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
         [processInfo enableSuddenTermination];
         [processInfo enableAutomaticTermination:@"Application has finished saving to the persistent store"];
         
@@ -103,6 +107,9 @@
 - (IBAction)didClickAdd:(id)sender {
     Favourite *fav = [Favourite MR_createEntity];
     fav.name = @"Untitled";
+    fav.host = @"localhost";
+    fav.user = @"root";
+    fav.adapter = @"MySQL";
     fav.timestamp = [NSDate date];
     _favs = [Favourite MR_findAllSortedBy:@"timestamp" ascending:YES];
     [MagicalRecord saveUsingCurrentThreadContextWithBlock:^(NSManagedObjectContext *localContext) {

@@ -12,7 +12,7 @@
 
 #define TABLES_QUERY @"SHOW TABLES"
 
-#define SCHEMA_QUERY(table) [NSString stringWithFormat:@"SHOW FULL COLUMNS FROM '%@'", table]
+#define SCHEMA_QUERY(table) [NSString stringWithFormat:@"SHOW FULL COLUMNS FROM %@", table]
 
 #define INDEXES_FOR_TABLE(table)
 
@@ -34,11 +34,11 @@
     dispatch_async(dispatchQueue, ^{
         conn = mysql_init(NULL);
         if (!mysql_real_connect(conn,
-                                [connectionDictionary[@"host"] UTF8String],
-                                [connectionDictionary[@"user"] UTF8String],
-                                [connectionDictionary[@"password"] UTF8String],
-                                [connectionDictionary[@"database_name"] UTF8String],
-                                (int)[connectionDictionary[@"port"] integerValue], NULL, 0)) {
+                                !NullOrNil(connectionDictionary[@"host"]) ? [connectionDictionary[@"host"] UTF8String] : NULL,
+                                !NullOrNil(connectionDictionary[@"user"]) ? [connectionDictionary[@"user"] UTF8String] : NULL,
+                                !NullOrNil(connectionDictionary[@"password"]) ? [connectionDictionary[@"password"] UTF8String] : NULL,
+                                !NullOrNil(connectionDictionary[@"database_name"]) ? [connectionDictionary[@"database_name"] UTF8String] : NULL,
+                                NullOrNil(connectionDictionary[@"port"]) ? 0 : (int)[connectionDictionary[@"port"] integerValue], NULL, 0)) {
             failure(NSStringFromChar(mysql_error(conn)));
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -73,6 +73,7 @@
         
         // MySQL uses 0 for success and 1 for error, go fucking figure
         if (!res) {
+            
             MYSQL_RES *mysql_res = mysql_store_result(conn);
             MySQLResultSet *resultSet = [[MySQLResultSet alloc] initWithResult:mysql_res];
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -205,12 +206,14 @@
     for (i = 0; i < nFields; i++) {
         [results addObject:NSStringFromChar(mysql_fetch_field_direct(res, i)->name)];
     }
-
-    for (i = 0; i < mysql_num_rows(res); i++)
+    
+    MYSQL_ROW row;
+    while ((row = mysql_fetch_row(res)))
     {
-        MYSQL_ROW row = mysql_fetch_row(res);
-        for (j = 0; j < nFields; j++) {
-            [results addObject:NSStringFromChar(row[j])];
+        for(j = 0; j < nFields; j++) {
+            if (row[j] != nil) {
+                [results addObject:NSStringFromChar(row[j])];
+            }
         }
     }
     
@@ -237,13 +240,22 @@
     
     num_fields = mysql_num_fields(res);
     fields = mysql_fetch_fields(res);
+    NSMutableArray *fieldsArray = [[NSMutableArray alloc] init];
+    
     for(i = 0; i < num_fields; i++)
     {
-        if (strcmp(fields[i].name, [identifier UTF8String])) {
-            return i-1;
-        }
+        [fieldsArray addObject:NSStringFromChar(fields[i].name)];
     }
-    return -1;
+    
+    NSUInteger idx = [fieldsArray indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        if ([(NSString*)obj isEqualToString:identifier]) {
+            *stop = YES;
+            return YES;
+        }
+        return NO;
+    }];
+    
+    return idx;
 }
 
 #pragma mark - Records
@@ -257,7 +269,12 @@
 {
     mysql_data_seek(res, index);
     MYSQL_ROW row = mysql_fetch_row(res);
-    return NSStringFromChar(row[fieldIndex]);
+    if (row[fieldIndex] != nil) {
+        return NSStringFromChar(row[fieldIndex]);
+    } else {
+        return nil;
+    }
+    
 }
 
 #pragma mark -

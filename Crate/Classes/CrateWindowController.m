@@ -8,6 +8,7 @@
 
 #import "CrateWindowController.h"
 #import "PostgreSQLAdapter.h"
+#import "MySQLAdapter.h"
 #import "INAppStoreWindow.h"
 
 @interface CrateWindowController ()
@@ -55,8 +56,15 @@
 -(void)connectWithDictionary:(NSDictionary*)dict
 {
     [self.progress startAnimation:nil];
+    if (NullOrNil(dict[@"adapter"])) {
+        [ErrorView displayForView:connectController.view
+                            title:@"Connection Error"
+                          message:@"No database adapter selected"];
+        return;
+    } else {
+        dbConnection = [dict[@"adapter"] isEqualToString:@"MySQL"] ? [[MySQLAdapter alloc] init] : [[PostgreSQLAdapter alloc] init];
+    }
 
-    dbConnection = [[PostgreSQLAdapter alloc] init];
     [dbConnection connectWithDictionary:dict
                           dispatchQueue:dbQueue
                                 success:^(id<DBConnection> connection) {

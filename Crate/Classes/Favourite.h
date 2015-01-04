@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSString * password;
 @property (nonatomic, retain) NSString * port;
 @property (nonatomic, retain) NSString * user;
+@property (nonatomic, retain) NSString * adapter;
 @property (nonatomic, retain) NSDate * timestamp;
 
 @end
