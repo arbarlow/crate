@@ -224,7 +224,11 @@
 
 - (NSUInteger)numberOfFields
 {
-    return mysql_num_fields(res);
+    if (res == nil) {
+        return 0;
+    } else {
+        return mysql_num_fields(res);
+    }
 }
 
 - (NSString *)identifierForFieldAtIndex:(NSUInteger)index
@@ -262,7 +266,11 @@
 
 - (NSUInteger)numberOfRecords
 {
-    return mysql_num_rows(res);
+    if (res == nil) {
+        return 0;
+    } else {
+        return mysql_num_rows(res);
+    }
 }
 
 - (NSString *)valueAtRecordIndex:(NSInteger)index forFieldIndex:(NSInteger)fieldIndex

@@ -56,10 +56,10 @@
 
 -(id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    
     NSUInteger fieldIndex = [_results indexForFieldWithIdentifier:tableColumn.identifier];
     id result = [_results valueAtRecordIndex:row forFieldIndex:fieldIndex];
-    if ([result isEqualToString:@""]) {
+    
+    if ([result isEqualToString:@""] || result == nil) {
         result = [[NSMutableAttributedString alloc] initWithString:@"NULL" attributes:@{NSForegroundColorAttributeName: [NSColor lightGrayColor]}];
     }
     return result;
