@@ -12,7 +12,11 @@
 @interface SchemaViewController : NSViewController
 
 @property (nonatomic, strong) id<DBConnection> dbConnection;
-@property (nonatomic, strong) ResultsViewController *resultsController;
+@property (nonatomic, strong) ResultsViewController *columnResultsController;
+@property (nonatomic, strong) ResultsViewController *indexesResultsController;
+
+@property (weak) IBOutlet NSView *columnsView;
+
 
 -(void)displaySchema:(NSString*)tableName;
 

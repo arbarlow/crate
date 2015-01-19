@@ -18,18 +18,37 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _resultsController = [[ResultsViewController alloc] initWithNibName:@"ResultsViewController" bundle:nil];
-        self.view = _resultsController.view;
+        
     }
     return self;
+}
+
+-(void)loadView{
+    [super loadView];
+
+    _columnResultsController = [[ResultsViewController alloc] initWithNibName:@"ResultsViewController" bundle:nil];
+    _indexesResultsController = [[ResultsViewController alloc] initWithNibName:@"ResultsViewController" bundle:nil];
+    [self.view replaceSubview:[self.view.subviews firstObject] with:_columnResultsController.view];
+    [self.view replaceSubview:[self.view.subviews lastObject] with:_indexesResultsController.view];
+    
+    [_columnResultsController.view setFocusRingType:NSFocusRingTypeNone];
+    [_indexesResultsController.view setFocusRingType:NSFocusRingTypeNone];
 }
 
 -(void)displaySchema:(NSString*)tableName
 {
     [_dbConnection schemaForTable:tableName success:^(id<DBResultSet> resultSet, NSTimeInterval elapsedTime) {
-        [_resultsController displayResults:resultSet];
+        [_columnResultsController displayResults:resultSet];
     } failure:^(NSString *error) {
-        [ErrorView displayForView:[_resultsController.view.subviews lastObject]
+        [ErrorView displayForView:[_columnResultsController.view.subviews lastObject]
+                            title:@"Schema loading"
+                          message:error];
+    }];
+    
+    [_dbConnection indexesForTable:tableName success:^(id<DBResultSet> resultSet, NSTimeInterval elapsedTime) {
+        [_indexesResultsController displayResults:resultSet];
+    } failure:^(NSString *error) {
+        [ErrorView displayForView:[_indexesResultsController.view.subviews lastObject]
                             title:@"Schema loading"
                           message:error];
     }];

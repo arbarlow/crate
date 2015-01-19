@@ -12,6 +12,7 @@ Right now Crate is very young and needs a lot of work doing which can be seen an
 Currently crate supports
 
  - PostgreSQL 8+ (but probably lower, just untested)
+ - MySQL 5.5+ (but probably lower, just untested)
 
 It is hopefully written in a way to support any table-like database see the [protocol](https://github.com/arbarlow/crate/blob/master/Crate/Classes/DBProtocols.h) and the current [PostgreSQL adapter](https://github.com/arbarlow/crate/blob/master/Crate/Classes/PostgreSQLAdapter.m)
 
@@ -19,7 +20,7 @@ It is hopefully written in a way to support any table-like database see the [pro
 
 It's a fairly standard Objective-C XCode project and uses Cocoapods for dependency management..
 
-Awesome! Just fork it and perhaps just check in that i'm not doing that feature before and then get yourself a pull request..
+Just fork it and perhaps just check in that I'm not doing that feature before and then get yourself a pull request..
 
 ## Swift
 

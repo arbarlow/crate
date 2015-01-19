@@ -41,6 +41,10 @@
                success:(void (^)(id <DBResultSet> resultSet, NSTimeInterval elapsedTime))success
                failure:(void (^)(NSString *error))failure;
 
+- (void)indexesForTable:(NSString*)tableName
+                success:(void (^)(id <DBResultSet> resultSet, NSTimeInterval elapsedTime))success
+                failure:(void (^)(NSString *error))failure;
+
 
 @end
 

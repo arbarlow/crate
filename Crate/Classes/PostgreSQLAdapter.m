@@ -26,7 +26,7 @@ FROM \
 WHERE \
     table_name = '%@'", table]
 
-#define INDEXES_FOR_TABLE(table) 
+#define INDEXES_FOR_TABLE(table) [NSString stringWithFormat:@"SELECT * FROM pg_indexes where tablename = '%@'", table]
 
 @implementation PostgreSQLAdapter
 {
@@ -158,6 +158,13 @@ WHERE \
                failure:(void (^)(NSString *error))failure
 {
     [self execQuery:SCHEMA_QUERY(tableName) success:success failure:failure];
+}
+
+- (void)indexesForTable:(NSString*)tableName
+                success:(void (^)(id <DBResultSet> resultSet, NSTimeInterval elapsedTime))success
+                failure:(void (^)(NSString *error))failure
+{
+    [self execQuery:INDEXES_FOR_TABLE(tableName) success:success failure:failure];
 }
 
 - (NSString *)connectionStringFromDictionary:(NSDictionary*)dict

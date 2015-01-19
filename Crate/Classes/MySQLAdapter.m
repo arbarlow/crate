@@ -14,7 +14,7 @@
 
 #define SCHEMA_QUERY(table) [NSString stringWithFormat:@"SHOW FULL COLUMNS FROM %@", table]
 
-#define INDEXES_FOR_TABLE(table)
+#define INDEXES_FOR_TABLE(table) [NSString stringWithFormat:@"SHOW INDEXES FROM %@", table]
 
 @implementation MySQLAdapter
 {
@@ -130,12 +130,19 @@
         failure(error);
     }];
 }
-//
+
 - (void)schemaForTable:(NSString*)tableName
                success:(void (^)(id <DBResultSet> resultSet, NSTimeInterval elapsedTime))success
                failure:(void (^)(NSString *error))failure
 {
     [self execQuery:SCHEMA_QUERY(tableName) success:success failure:failure];
+}
+
+- (void)indexesForTable:(NSString*)tableName
+                success:(void (^)(id <DBResultSet> resultSet, NSTimeInterval elapsedTime))success
+                failure:(void (^)(NSString *error))failure
+{
+    [self execQuery:INDEXES_FOR_TABLE(tableName) success:success failure:failure];
 }
 
 -(BOOL)isOpen
