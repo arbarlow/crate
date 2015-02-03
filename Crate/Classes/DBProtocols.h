@@ -23,10 +23,6 @@
                       success:(void (^)(id <DBConnection> connection))success
                       failure:(void (^)(NSString *error))failure;
 
-- (void)selectDatabase:(NSString*)database
-               success:(void (^)(id <DBConnection> connection))success
-               failure:(void (^)(NSString *error))failure;
-
 - (void)execQuery:(NSString *)query
           success:(void (^)(id <DBResultSet> resultSet, NSTimeInterval elapsedTime))success
           failure:(void (^)(NSString *error))failure;
@@ -44,7 +40,11 @@
 - (void)indexesForTable:(NSString*)tableName
                 success:(void (^)(id <DBResultSet> resultSet, NSTimeInterval elapsedTime))success
                 failure:(void (^)(NSString *error))failure;
+@optional
 
+- (void)selectDatabase:(NSString*)database
+               success:(void (^)(id <DBConnection> connection))success
+               failure:(void (^)(NSString *error))failure;
 
 @end
 

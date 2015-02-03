@@ -39,7 +39,7 @@
     for (int i=0; i < (int)[_results numberOfFields]; i++) {
         NSString *fieldName = [_results identifierForFieldAtIndex:i];
         
-        NSTableColumn *tableColumn = [[NSTableColumn alloc] initWithIdentifier:fieldName];
+        NSTableColumn *tableColumn = [[NSTableColumn alloc] initWithIdentifier:[NSString stringWithFormat:@"%d", i]];
         [tableColumn.headerCell setStringValue:fieldName];
         [_tableView addTableColumn:tableColumn];
     }
@@ -56,7 +56,7 @@
 
 -(id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    NSUInteger fieldIndex = [_results indexForFieldWithIdentifier:tableColumn.identifier];
+    NSUInteger fieldIndex = [tableColumn.identifier integerValue];
     id result = [_results valueAtRecordIndex:row forFieldIndex:fieldIndex];
     
     if ([result isEqualToString:@""] || result == nil) {

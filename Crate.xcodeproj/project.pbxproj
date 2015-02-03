@@ -26,6 +26,8 @@
 		FA755273193699F40068C776 /* CrateWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA75526C193699F40068C776 /* CrateWindowController.xib */; };
 		FA755274193699F40068C776 /* QueryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA75526D193699F40068C776 /* QueryViewController.xib */; };
 		FA755276193699F40068C776 /* SchemaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA75526F193699F40068C776 /* SchemaViewController.xib */; };
+		FA890DC11A71830900070C10 /* SQLiteAdapterTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA890DC01A71830900070C10 /* SQLiteAdapterTests.mm */; };
+		FA890DC41A71858C00070C10 /* SQLiteAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA890DC31A71858C00070C10 /* SQLiteAdapter.m */; };
 		FAA3C42C191FC26C00B31C34 /* PostgreSQLAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA3C42B191FC26C00B31C34 /* PostgreSQLAdapter.m */; };
 		FAA3C42E191FD19200B31C34 /* libpq.5.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA3C42D191FD19200B31C34 /* libpq.5.6.dylib */; };
 		FAA3C43B192022E800B31C34 /* NSManagedObject+Dictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA3C43A192022E800B31C34 /* NSManagedObject+Dictionary.m */; };
@@ -51,6 +53,7 @@
 		FAE317D61A584165006F1F75 /* MySQLAdapterTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAE317D51A584165006F1F75 /* MySQLAdapterTests.mm */; };
 		FAE317DD1A5843ED006F1F75 /* employees.sql in Resources */ = {isa = PBXBuildFile; fileRef = FAE317DB1A5843ED006F1F75 /* employees.sql */; };
 		FAE317DE1A5843ED006F1F75 /* load_employees.dump in Resources */ = {isa = PBXBuildFile; fileRef = FAE317DC1A5843ED006F1F75 /* load_employees.dump */; };
+		FAF674C81A81636A0000C734 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF674C71A81636A0000C734 /* libsqlite3.dylib */; };
 		FAFEB67E19198D6C00E9FDB3 /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFEB67C19198D6C00E9FDB3 /* ConnectViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +111,9 @@
 		FA75526C193699F40068C776 /* CrateWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CrateWindowController.xib; path = Views/CrateWindowController.xib; sourceTree = "<group>"; };
 		FA75526D193699F40068C776 /* QueryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QueryViewController.xib; path = Views/QueryViewController.xib; sourceTree = "<group>"; };
 		FA75526F193699F40068C776 /* SchemaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SchemaViewController.xib; path = Views/SchemaViewController.xib; sourceTree = "<group>"; };
+		FA890DC01A71830900070C10 /* SQLiteAdapterTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SQLiteAdapterTests.mm; sourceTree = "<group>"; };
+		FA890DC21A71858C00070C10 /* SQLiteAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SQLiteAdapter.h; path = Classes/SQLiteAdapter.h; sourceTree = "<group>"; };
+		FA890DC31A71858C00070C10 /* SQLiteAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQLiteAdapter.m; path = Classes/SQLiteAdapter.m; sourceTree = "<group>"; };
 		FAA3C42A191FC26C00B31C34 /* PostgreSQLAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostgreSQLAdapter.h; path = Classes/PostgreSQLAdapter.h; sourceTree = "<group>"; };
 		FAA3C42B191FC26C00B31C34 /* PostgreSQLAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostgreSQLAdapter.m; path = Classes/PostgreSQLAdapter.m; sourceTree = "<group>"; };
 		FAA3C42D191FD19200B31C34 /* libpq.5.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpq.5.6.dylib; path = ../../../../usr/local/Cellar/postgresql/9.3.2/lib/libpq.5.6.dylib; sourceTree = "<group>"; };
@@ -148,6 +154,7 @@
 		FAE317D51A584165006F1F75 /* MySQLAdapterTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MySQLAdapterTests.mm; sourceTree = "<group>"; };
 		FAE317DB1A5843ED006F1F75 /* employees.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = employees.sql; sourceTree = "<group>"; };
 		FAE317DC1A5843ED006F1F75 /* load_employees.dump */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = load_employees.dump; sourceTree = "<group>"; };
+		FAF674C71A81636A0000C734 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		FAFEB67B19198D6C00E9FDB3 /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConnectViewController.h; path = Classes/ConnectViewController.h; sourceTree = "<group>"; };
 		FAFEB67C19198D6C00E9FDB3 /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConnectViewController.m; path = Classes/ConnectViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF674C81A81636A0000C734 /* libsqlite3.dylib in Frameworks */,
 				FAE317D41A583F08006F1F75 /* libmysqlclient.18.dylib in Frameworks */,
 				FA4E51C31A06A2A000F17791 /* MGSFragaria.framework in Frameworks */,
 				FAA3C42E191FD19200B31C34 /* libpq.5.6.dylib in Frameworks */,
@@ -237,6 +245,8 @@
 				FAA3C42B191FC26C00B31C34 /* PostgreSQLAdapter.m */,
 				FAE317D01A5800AC006F1F75 /* MySQLAdapter.h */,
 				FAE317D11A5800AC006F1F75 /* MySQLAdapter.m */,
+				FA890DC21A71858C00070C10 /* SQLiteAdapter.h */,
+				FA890DC31A71858C00070C10 /* SQLiteAdapter.m */,
 			);
 			name = Adapters;
 			sourceTree = "<group>";
@@ -265,6 +275,7 @@
 		FAC2F76A19197F8500E3AB81 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAF674C71A81636A0000C734 /* libsqlite3.dylib */,
 				FAE317D31A583F08006F1F75 /* libmysqlclient.18.dylib */,
 				FA4E51C21A06A2A000F17791 /* MGSFragaria.framework */,
 				FAA3C42D191FD19200B31C34 /* libpq.5.6.dylib */,
@@ -332,6 +343,7 @@
 				FAC2F79819197F8600E3AB81 /* CrateTests.m */,
 				FA4DB862192BA65000F76981 /* PostgreSQLAdapterTests.mm */,
 				FAE317D51A584165006F1F75 /* MySQLAdapterTests.mm */,
+				FA890DC01A71830900070C10 /* SQLiteAdapterTests.mm */,
 				FAC2F79319197F8600E3AB81 /* Supporting Files */,
 			);
 			path = CrateTests;
@@ -598,6 +610,7 @@
 				FA755261193697BD0068C776 /* BasicDataViewController.m in Sources */,
 				FAA3C43B192022E800B31C34 /* NSManagedObject+Dictionary.m in Sources */,
 				FA75525C193691700068C776 /* SchemaViewController.m in Sources */,
+				FA890DC41A71858C00070C10 /* SQLiteAdapter.m in Sources */,
 				FAC7D97B194C9E0B003630A0 /* DarkBorederedView.m in Sources */,
 				FAC2F7A9191985A700E3AB81 /* CrateWindowController.m in Sources */,
 				FAE317D21A5800AC006F1F75 /* MySQLAdapter.m in Sources */,
@@ -615,6 +628,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA890DC11A71830900070C10 /* SQLiteAdapterTests.mm in Sources */,
 				FAC2F79919197F8600E3AB81 /* CrateTests.m in Sources */,
 				FAE317D61A584165006F1F75 /* MySQLAdapterTests.mm in Sources */,
 				FA4DB863192BA65000F76981 /* PostgreSQLAdapterTests.mm in Sources */,
