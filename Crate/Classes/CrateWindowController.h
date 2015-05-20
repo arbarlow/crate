@@ -19,5 +19,6 @@
 @property (weak) IBOutlet NSSegmentedControl *viewSelector;
 
 -(void)connectWithDictionary:(NSDictionary*)dict;
+-(void)setupDatabaseSelect;
 
 @end

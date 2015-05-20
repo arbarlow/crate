@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -67,6 +67,11 @@
                             <menuItem title="New Window" keyEquivalent="n" id="Was-JA-tGl">
                                 <connections>
                                     <action selector="newWindowFromMenu:" target="Voe-Tx-rLC" id="3K3-sX-gwy"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Refresh Databases" keyEquivalent="R" id="PyK-5f-baM">
+                                <connections>
+                                    <action selector="refreshDatabases:" target="Voe-Tx-rLC" id="s6H-1F-Ba6"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Close" keyEquivalent="w" id="DVo-aG-piG">

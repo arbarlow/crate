@@ -37,6 +37,12 @@ static NSString *storeName = @"Crate.sqlite";
     [self createNewWindow];
 }
 
+- (IBAction)refreshDatabases:(id)sender {
+    [_windows enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [(CrateWindowController*)obj setupDatabaseSelect];
+    }];
+}
+
 -(void)createNewWindow
 {
     CrateWindowController *cWc = [[CrateWindowController alloc] initWithWindowNibName:@"CrateWindowController"];
