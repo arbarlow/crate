@@ -35,6 +35,8 @@
 -(void)loadView{
     [super loadView];
     [_tableView selectRowIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 1)] byExtendingSelection:NO];
+    [_tableView setTarget:self];
+    [_tableView setDoubleAction:@selector(didDoubleClick)];
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
@@ -76,8 +78,16 @@
     [[field cell] setPlaceholderString:@"NULL"];
 }
 
+- (void)didDoubleClick {
+    [self connnect:_favs[[_tableView clickedRow]]];
+}
+
 - (IBAction)didClickConnect:(id)sender {
-    Favourite *fav = _favs[[_tableView selectedRow]];
+    [self connnect:_favs[[_tableView selectedRow]]];
+}
+
+-(void)connnect:(Favourite*)fav {
+    
     
     NSProcessInfo *processInfo = [NSProcessInfo processInfo];
     [processInfo disableSuddenTermination];
@@ -98,6 +108,7 @@
         [_delegate connectWithDictionary:[fav asDictionary]];
     }];
 }
+
 
 - (void)controlTextDidChange:(NSNotification *)aNotification
 {
