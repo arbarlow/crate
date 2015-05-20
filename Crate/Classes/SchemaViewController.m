@@ -28,8 +28,11 @@
 
     _columnResultsController = [[ResultsViewController alloc] initWithNibName:@"ResultsViewController" bundle:nil];
     _indexesResultsController = [[ResultsViewController alloc] initWithNibName:@"ResultsViewController" bundle:nil];
+    
     [self.view replaceSubview:[self.view.subviews firstObject] with:_columnResultsController.view];
     [self.view replaceSubview:[self.view.subviews lastObject] with:_indexesResultsController.view];
+    
+    [(NSSplitView*)self.view setPosition:(self.view.frame.size.height - 200) ofDividerAtIndex:0];
     
     [_columnResultsController.view setFocusRingType:NSFocusRingTypeNone];
     [_indexesResultsController.view setFocusRingType:NSFocusRingTypeNone];

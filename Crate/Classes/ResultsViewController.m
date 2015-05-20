@@ -8,6 +8,9 @@
 
 #import "ResultsViewController.h"
 
+#define MAX_COLUMN_WIDTH 230
+#define COLUMN_PADDING 10
+
 @interface ResultsViewController ()
 
 @end
@@ -28,6 +31,7 @@
     _results = results;
     [self setupColumns];
     [_tableView reloadData];
+    [self sizeColumns];
 }
 
 -(void)setupColumns
@@ -41,12 +45,30 @@
         
         NSTableColumn *tableColumn = [[NSTableColumn alloc] initWithIdentifier:[NSString stringWithFormat:@"%d", i]];
         [tableColumn.headerCell setStringValue:fieldName];
+        
         [_tableView addTableColumn:tableColumn];
     }
-    
-    for (int i=0; i < (int)[_results numberOfFields]; i++) {
-        
-    }
+}
+
+-(void)sizeColumns
+{
+    NSRect rect = NSMakeRect(0,0, INFINITY, _tableView.rowHeight);
+    [_tableView.tableColumns enumerateObjectsUsingBlock:^(id column, NSUInteger idx, BOOL *stop) {
+        CGFloat currentSize = 0;
+        for (NSInteger i = 0; i < _tableView.numberOfRows; i++) {
+            NSCell *cell = [_tableView preparedCellAtColumn:idx row:i];
+            NSSize size = [cell cellSizeForBounds:rect];
+            if (size.width < MAX_COLUMN_WIDTH) {
+                currentSize = MAX(size.width + COLUMN_PADDING, currentSize);
+            } else {
+                currentSize = MAX_COLUMN_WIDTH;
+            }
+        }
+        if (currentSize < [column width]) {
+            currentSize = [column width] + COLUMN_PADDING;
+        }
+        [column setWidth:currentSize];
+    }];
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
